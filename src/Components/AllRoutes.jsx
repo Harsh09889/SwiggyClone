@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
+import Restaurant from "../Pages/Restaurant";
 
 const AllRoutes = () => {
 	return (
@@ -14,8 +15,8 @@ const AllRoutes = () => {
 					element={<HomePage />}
 				/>
 				<Route
-					path='/restaurant'
-					element={<HomePage />}
+					path='/restaurants/:id'
+					element={<Restaurant />}
 				/>
 				<Route
 					path='/checkout'

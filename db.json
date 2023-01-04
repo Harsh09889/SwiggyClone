@@ -1,0 +1,196 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"username": "harsh09889",
+			"name": "harsh kumar",
+			"password": "123456"
+		}
+	],
+	"restaurants": [
+		{
+			"id": "1",
+			"name": "Punjabi Angithi",
+			"city": "New Delhi",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
+			"ratings": "4.1",
+			"cheapestPrice": 400,
+			"deliveryTime": 71,
+			"menu": [
+				{
+					"category": "burger",
+					"foodItems": ["1", "2"]
+				},
+				{
+					"category": "pizza",
+					"foodItems": ["3", "4"]
+				},
+				{
+					"category": "momo",
+					"foodItems": ["5", "6"]
+				}
+			]
+		},
+		{
+			"id": "2",
+			"name": "Bistro",
+			"city": "New Delhi",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
+			"ratings": "4.1",
+			"cheapestPrice": 400,
+			"deliveryTime": 61,
+			"menu": [
+				{
+					"category": "burger",
+					"foodItems": ["1", "2"]
+				},
+				{
+					"category": "pizza",
+					"foodItems": ["3", "4"]
+				},
+				{
+					"category": "momo",
+					"foodItems": ["5", "6"]
+				}
+			]
+		},
+		{
+			"id": "3",
+			"name": "MC Downalds",
+			"city": "New Delhi",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
+			"ratings": "4.1",
+			"cheapestPrice": 400,
+			"deliveryTime": 51,
+			"menu": [
+				{
+					"category": "burger",
+					"foodItems": ["1", "2"]
+				},
+				{
+					"category": "pizza",
+					"foodItems": ["3", "4"]
+				},
+				{
+					"category": "momo",
+					"foodItems": ["5", "6"]
+				}
+			]
+		},
+		{
+			"id": "4",
+			"name": "Punjab Kesri",
+			"city": "New Delhi",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
+			"ratings": "4.1",
+			"cheapestPrice": 400,
+			"deliveryTime": 41,
+			"menu": [
+				{
+					"category": "burger",
+					"foodItems": ["1", "2"]
+				},
+				{
+					"category": "pizza",
+					"foodItems": ["3", "4"]
+				},
+				{
+					"category": "momo",
+					"foodItems": ["5", "6"]
+				}
+			]
+		},
+		{
+			"id": "5",
+			"name": "KFC",
+			"city": "New Delhi",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
+			"ratings": "4.1",
+			"cheapestPrice": 400,
+			"deliveryTime": 30,
+			"menu": [
+				{
+					"category": "burger",
+					"foodItems": ["1", "2"]
+				},
+				{
+					"category": "pizza",
+					"foodItems": ["3", "4"]
+				},
+				{
+					"category": "momo",
+					"foodItems": ["5", "6"]
+				}
+			]
+		}
+	],
+
+	"dishes": [
+		{
+			"id": "1",
+			"category": "burger",
+			"name": "Plain Burger",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
+			"ratings": "307",
+			"price": 150,
+			"restaurant": "Punjabi Angithi",
+			"desc": "This is a burger and burger it is. ",
+			"veg": true
+		},
+		{
+			"id": "2",
+			"category": "burger",
+			"name": "Plain Burger",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
+			"ratings": "307",
+			"price": 150,
+			"restaurant": "Punjabi Angithi",
+			"desc": "This is a burger and burger it is. ",
+			"veg": true
+		},
+		{
+			"id": "3",
+			"category": "pizza",
+			"name": "Plain Pizza",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
+			"ratings": "307",
+			"price": 150,
+			"restaurant": "Punjabi Angithi",
+			"desc": "This is a burger and burger it is. ",
+			"veg": true
+		},
+		{
+			"id": "4",
+			"category": "pizza",
+			"name": "Mai Pizza hun",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
+			"ratings": "307",
+			"price": 150,
+			"restaurant": "Punjabi Angithi",
+			"desc": "This is a burger and burger it is. ",
+			"veg": true
+		},
+		{
+			"id": "5",
+			"category": "momo",
+			"name": "Plain MOMO",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
+			"ratings": "307",
+			"price": 150,
+			"restaurant": "Punjabi Angithi",
+			"desc": "This is a burger and burger it is. ",
+			"veg": true
+		},
+		{
+			"id": "6",
+			"category": "momo",
+			"name": "Mai MOMO hun",
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
+			"ratings": "307",
+			"price": 150,
+			"restaurant": "Punjabi Angithi",
+			"desc": "This is a burger and burger it is. ",
+			"veg": true
+		}
+	]
+}

@@ -19,13 +19,13 @@ function Navbar() {
 	}, []);
 
 	return (
-		<div className='h-20 shadow-md flex justify-center sticky top-0 bg-white'>
+		<div className='h-20 shadow-md flex justify-center sticky top-0 bg-white z-50'>
 			<div className='w-full h-full max-w-[1200px] px-4  flex items-center justify-between'>
 				<div className='flex h-full items-center'>
 					<img
 						src='https://1000logos.net/wp-content/uploads/2021/05/Swiggy-emblem.png'
 						alt='Swiggy'
-						className='h-3/4'
+						className='h-3/4 -mx-6 -ml-10'
 					/>
 					<motion.div
 						whileHover={{ color: "tomato" }}
@@ -53,7 +53,7 @@ function Navbar() {
 							to='/search'
 							className='flex items-center justify-center gap-2'>
 							<svg
-								class='_1GTCc'
+								className='_1GTCc'
 								viewBox='5 -1 12 25'
 								height='17'
 								width='17'
@@ -68,7 +68,7 @@ function Navbar() {
 							to='/'
 							className='flex items-center justify-center gap-2'>
 							<svg
-								class='_1GTCc'
+								className='_1GTCc'
 								viewBox='0 0 32 32'
 								height='19'
 								width='19'
@@ -83,7 +83,7 @@ function Navbar() {
 							to='/'
 							className='flex items-center justify-center gap-2'>
 							<svg
-								class='_1GTCc'
+								className='_1GTCc'
 								viewBox='6 -1 12 25'
 								height='19'
 								width='19'
@@ -98,7 +98,7 @@ function Navbar() {
 							to='/login'
 							className='flex items-center justify-center gap-2'>
 							<svg
-								class='_1GTCc _2MSid'
+								className='_1GTCc _2MSid'
 								viewBox='-1 0 37 32'
 								height='20'
 								width='20'
