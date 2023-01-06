@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addRestaurant } from "../../Redux/Restaurant/RestaurantActions";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 const RestaurantCard = ({
 	restaurantDetails: {
@@ -17,6 +19,7 @@ const RestaurantCard = ({
 }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const [quickView, setQuickView] = useState(false);
 
 	function handleNavigate(id) {
 		(async () => {
@@ -39,12 +42,15 @@ const RestaurantCard = ({
 	}
 
 	return (
-		<div className='h-full flex flex-col group/card w-full p-5 px-6 border border-transparent hover:border-gray-200 hover:shadow-md'>
+		<motion.div
+			initial={{ opacity: 0, top: "-3rem" }}
+			animate={{ opacity: 1, top: "0" }}
+			className='h-full relative flex flex-col group/card w-full p-5 px-6 border border-transparent hover:border-gray-200 hover:shadow-md'>
 			<div onClick={(e) => handleNavigate(id)}>
 				<img
 					src={image}
 					alt={name}
-					className='h-40 w-64'
+					className='h-40 w-64 z-0'
 				/>
 				<p className='text-sm font-semibold mt-4'>{name}</p>
 				<p className='text-xs text-gray-500'>{discription}</p>
@@ -71,11 +77,23 @@ const RestaurantCard = ({
 					</span>
 					<span className='text-xs'>{cheapestPrice * 2}₹ for Two </span>
 				</div>
-				<div className='invisible flex group-hover/card:visible justify-center items-center pt-4 '>
+				<div
+					onMouseOver={(e) => setQuickView(true)}
+					onMouseLeave={(e) => setQuickView(false)}
+					className='invisible relative group/quickView flex group-hover/card:visible justify-center items-center pt-4 '>
 					<p className='text-sm font-semibold text-blue-500'>QUICK VIEW</p>
+					<AnimatePresence>
+						{quickView && (
+							<motion.div
+								initial={{ opacity: 0, scale: 0 }}
+								animate={{ opacity: 1, scale: 1, background: "blue" }}
+								exit={{ opacity: 0, scale: 0 }}
+								className='absolute h-60 w-60 z-[100]'></motion.div>
+						)}
+					</AnimatePresence>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
