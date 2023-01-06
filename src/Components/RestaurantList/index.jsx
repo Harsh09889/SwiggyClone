@@ -75,8 +75,6 @@ const index = () => {
 		dispatch({ type: filter });
 	};
 
-	console.log(filters);
-
 	return (
 		<>
 			<div className='flex flex-col max-w-[1200px] mx-auto justify-center bg-white'>

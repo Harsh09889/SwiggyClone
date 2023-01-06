@@ -5,26 +5,54 @@ import DishCategoryWise from "../Components/RestaurantList/DishCategoryWise";
 import Skeleton from "react-loading-skeleton";
 import Cart from "../Components/Cart";
 import styles from "../styles/Restaurant.module.css";
+import DishSearchComponent from "../Components/RestaurantList/DishSearchComponent";
 
 const Restaurant = () => {
 	const { id } = useParams();
 	let data = useSelector((state) => state.restaurant.restaurant);
 	let dishesData = useSelector((state) => state.restaurant.dishes);
 	const [selectedMenu, setSelectedMenu] = useState(0);
-	const dishListRef = useRef(null);
-
+	const [dishSearch, setDishSearch] = useState("");
+	const [onlyDishesId, setOnlyDishesId] = useState([]);
+	const [searchResults, setSearchResults] = useState([]);
 	const dishes = dishesData?.filter((dish) => {
 		return dish.restaurant.includes(id);
 	});
 
+	function handleDishSearch(e) {
+		setDishSearch(e.target.value);
+	}
+
+	console.log(searchResults);
+
 	useEffect(() => {
-		document
-			.getElementById(`dishId${selectedMenu}`)
-			.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+		let toMatch = new RegExp(dishSearch, "i");
+		if (dishSearch.length > 0) setSelectedMenu(-1);
+		else setSelectedMenu(0);
+
+		const search = dishesData.filter(
+			(dish) => onlyDishesId.includes(dish.id) && dish.name.match(toMatch)
+		);
+		setSearchResults(search);
+	}, [dishSearch]);
+
+	useEffect(() => {
+		if (dishSearch.length < 1) {
+			document.getElementById(`dishId${selectedMenu}`).scrollIntoView({
+				behavior: "smooth",
+				block: "end",
+				inline: "nearest",
+			});
+		}
 	}, [selectedMenu]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		const onlyDishes = [];
+		data.menu.forEach((menuItem) => {
+			onlyDishes.push(...menuItem.foodItems);
+		});
+		setOnlyDishesId(onlyDishes);
 	}, []);
 
 	return !data.id ? (
@@ -56,6 +84,8 @@ const Restaurant = () => {
 							</svg>
 							<input
 								type='text'
+								value={dishSearch}
+								onChange={handleDishSearch}
 								placeholder='Search for Dishes'
 								className='h-full w-[18rem] text-xs  text-black ml-2  border-0 outline-none  '
 							/>
@@ -87,7 +117,7 @@ const Restaurant = () => {
 								<h1 className='text-sm text-gray-300 mb-4 font-semibold'>
 									{data?.discription}
 								</h1>
-								<h1 className='text-sm text-gray-300 mb-4 font-semibold'>
+								<h1 className=' text-gray-200 first-letter:capitalize mb-4 font-semibold'>
 									{data.city}
 								</h1>
 								<div className='mt-4 flex justify-between'>
@@ -110,11 +140,11 @@ const Restaurant = () => {
 									</div>
 									<div className='px-8  border-r flex flex-col justify-end'>
 										<span className=''>
-											{data.deliveryTime > 59
-												? `${Math.floor(data.deliveryTime / 60)} hour ${
-														data.deliveryTime % 60
+											{data.deliverTime > 59
+												? `${Math.floor(data.deliverTime / 60)} hour ${
+														data.deliverTime % 60
 												  }`
-												: data.deliveryTime}{" "}
+												: data.deliverTime}{" "}
 											mins{" "}
 										</span>
 										<p className='text-xs text-gray-300'>Delivery Time</p>
@@ -163,6 +193,18 @@ const Restaurant = () => {
 				</div>
 				<div className='max-w-[1200px] mt-8 w-full flex columns-4 mx-auto'>
 					<div className='col-span-1 w-1/3 flex flex-col items-end'>
+						{dishSearch.length > 0 && (
+							<p
+								className={`text-sm pr-8 border-r-4 cursor-pointer border-transparent mb-2 ${
+									selectedMenu === -1
+										? "text-[tomato] font-bold border-[tomato]"
+										: ""
+								}`}
+								// onClick={}
+							>
+								Search
+							</p>
+						)}
 						{data.menu?.map((menuItem, idx) => (
 							<p
 								className={`text-sm pr-8 border-r-4 cursor-pointer border-transparent mb-2 ${
@@ -181,15 +223,25 @@ const Restaurant = () => {
 						{dishes ? (
 							<div
 								className={` ${styles.dishListContainer} h-[calc(100vh-10rem)] overflow-y-scroll`}>
-								{data.menu?.map((dishObj, idx) => (
-									<DishCategoryWise
-										key={idx}
-										id={idx}
-										restaurantId={id}
-										category={dishObj.category}
-										foodItems={dishObj.foodItems}
-									/>
-								))}
+								{dishSearch.length > 0
+									? searchResults.map((dish) => (
+											<div className='flex flex-col px-8 py-4'>
+												<DishSearchComponent
+													key={dish.id}
+													dish={dish}
+													restaurantId={id}
+												/>
+											</div>
+									  ))
+									: data.menu?.map((dishObj, idx) => (
+											<DishCategoryWise
+												key={idx}
+												id={idx}
+												restaurantId={id}
+												category={dishObj.category}
+												foodItems={dishObj.foodItems}
+											/>
+									  ))}
 							</div>
 						) : (
 							<div className='mt-16 flex gap-4 flex-col items-center justify-center'>
