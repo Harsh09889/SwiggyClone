@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
+import Checkout from "../Pages/Checkout";
 import HomePage from "../Pages/HomePage";
 import Restaurant from "../Pages/Restaurant";
+import Search from "../Pages/Search";
 
 const AllRoutes = () => {
 	return (
@@ -12,7 +14,7 @@ const AllRoutes = () => {
 				/>
 				<Route
 					path='/search'
-					element={<HomePage />}
+					element={<Search />}
 				/>
 				<Route
 					path='/restaurants/:id'
@@ -20,7 +22,7 @@ const AllRoutes = () => {
 				/>
 				<Route
 					path='/checkout'
-					element={<HomePage />}
+					element={<Checkout />}
 				/>
 			</Routes>
 		</>

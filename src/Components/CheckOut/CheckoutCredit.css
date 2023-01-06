@@ -1,0 +1,95 @@
+.payments {
+    width: 100%;
+    text-align: left;
+    background: rgb(226, 226, 226);
+    padding: 25px;
+    
+}
+
+.payment-heading {
+    margin-bottom: 25px;
+}
+
+
+.card-center {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-expiration .card-cvv, .card-type {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.expiry, .cvv {
+    width: 100px;
+}
+
+.payment-input {
+    margin-top: 10px;
+}
+
+.to-checkout {
+    background: rgb(158, 50, 50);
+    color: #ffffff;
+    font-weight: 700;
+    width: 50%;
+    height: 46px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid black;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.to-checkout:hover {
+    background: rgb(255, 69, 69);
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .payments {
+        width: 85%;
+        margin-left: 25px;
+    }
+
+    .card-center {
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    .card-expiration, .card-cvv {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .payment-input, .card-type {
+        width: 85%;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .card-center {
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .card-expiration, .card-cvv {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .payments {
+        width: 85%;
+        margin-left: 0;
+        
+    }
+    
+}
