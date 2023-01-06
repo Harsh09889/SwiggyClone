@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 
-function index({ restaurantId }) {
+function index() {
 	const allCartItems = useSelector((state) => state.cart);
 	const username = useSelector((state) => state.auth.currentUser.username);
 
@@ -11,8 +12,6 @@ function index({ restaurantId }) {
 	);
 
 	const cartItems = cartArray.length ? cartArray[0].cartItems : [];
-
-	console.log("user's cart is -> ", cartItems);
 
 	return (
 		<div className='p-4 border '>
@@ -33,6 +32,13 @@ function index({ restaurantId }) {
 						0}
 				</p>
 			</h1>
+			<Link
+				to={"/checkout"}
+				className='bg-green-500 text-white w-full block text-center py-3
+				 mt-4'>
+				{" "}
+				Checkout
+			</Link>
 		</div>
 	);
 }
