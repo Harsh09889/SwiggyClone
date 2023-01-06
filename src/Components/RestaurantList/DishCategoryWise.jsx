@@ -1,14 +1,9 @@
-import { useDebugValue } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../Redux/Cart/CartActions";
 
-function DishCategoryWise({ category, foodItems, restaurantId }) {
+function DishCategoryWise({ category, foodItems, restaurantId, id }) {
 	let dishes = useSelector((state) => state.restaurant.dishes);
-	let cart = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
-
-	// const [cartItems] = cart.filter((obj) => obj.username === "harsh09889");
-	// console.log(cartItems);
 
 	function handleAddToCart(dishId, price) {
 		// Add cart payload will have {username,dishId,restaurantId,price}
@@ -34,7 +29,9 @@ function DishCategoryWise({ category, foodItems, restaurantId }) {
 	}
 
 	return (
-		<div className='flex flex-col px-8 py-4'>
+		<div
+			id={`dishId${id}`}
+			className='flex flex-col px-8 py-4'>
 			<h1 className='text-lg leading-5 font-bold first-letter:capitalize'>
 				{category}
 			</h1>
