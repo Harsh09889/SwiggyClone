@@ -15,6 +15,7 @@ const Restaurant = () => {
 	const [dishSearch, setDishSearch] = useState("");
 	const [onlyDishesId, setOnlyDishesId] = useState([]);
 	const [searchResults, setSearchResults] = useState([]);
+	const [vegOnly, setVegOnly] = useState(false);
 	const dishes = dishesData?.filter((dish) => {
 		return dish.restaurant.includes(id);
 	});
@@ -22,8 +23,6 @@ const Restaurant = () => {
 	function handleDishSearch(e) {
 		setDishSearch(e.target.value);
 	}
-
-	console.log(searchResults);
 
 	useEffect(() => {
 		let toMatch = new RegExp(dishSearch, "i");
@@ -96,7 +95,8 @@ const Restaurant = () => {
 								type='checkbox'
 								name='vegOnly'
 								id='vegOnly'
-								value={"veg"}
+								value={vegOnly}
+								onChange={(e) => setVegOnly(!vegOnly)}
 							/>
 							<label
 								htmlFor='vegOnly'
@@ -230,6 +230,7 @@ const Restaurant = () => {
 													key={dish.id}
 													dish={dish}
 													restaurantId={id}
+													vegOnly={vegOnly}
 												/>
 											</div>
 									  ))
@@ -238,6 +239,7 @@ const Restaurant = () => {
 												key={idx}
 												id={idx}
 												restaurantId={id}
+												vegOnly={vegOnly}
 												category={dishObj.category}
 												foodItems={dishObj.foodItems}
 											/>
