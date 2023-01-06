@@ -8,7 +8,7 @@ import north from './Images/northIndian-img.png'
 import south from './Images/southIndian-img.png'
 import pizza from './Images/pizza-img.png'
 import roll from './Images/rolls-img.png'
-
+import Display from './Images/Display';
 
 
 const Search = () => {
@@ -30,15 +30,16 @@ const Search = () => {
 </div><br /><br />
 <div className=' w-[800px] ml-16  '>
 	<div className='grid grid-cols-2  gap-2  bg-slate-100 '>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
-		<div className=' w-[90%] h-56 p-5 m-5 bg-white rounded-[20px]'>1</div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'>			
+<Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
+		<div className=' w-[90%] h-56  m-5 bg-white rounded-[20px]'><Display/></div>
 </div>
 </div>
 </div>
