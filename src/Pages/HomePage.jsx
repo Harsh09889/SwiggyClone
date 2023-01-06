@@ -1,9 +1,23 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import RestaurantList from "../Components/RestaurantList/";
+import { login, register } from "../Redux/Auth/AuthActions";
 
 const HomePage = () => {
 	const [carousel, setCarousel] = useState(0);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(
+			register({
+				name: "harsh",
+				username: "harsh09889",
+				email: "harsh@gmail.com",
+				password: "123",
+			})
+		);
+		dispatch(login({ email: "harsh@gmail.com", password: "123" }));
+	}, []);
 
 	return (
 		<div className='h-full min-h-screen'>

@@ -37,7 +37,7 @@ const DishSchema = {
 	image: "",
 	ratings: "",
 	price: 0,
-	restaurant: "",
+	restaurant: [],
 	desc: "",
 	veg: true,
 };
@@ -46,7 +46,11 @@ const CartSchema = {
 	username: "",
 	cartItems: [
 		{
-			id: "",
+			dishId: "",
+			restaurantId: "",
+			price: "",
+			totalPrice: "",
+			quantity: "",
 		},
 	],
 };

@@ -4,11 +4,15 @@ import App from "./App";
 import "./index.css";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { Provider } from "react-redux";
+import { store } from "./Redux/Store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<Router>
-			<App />
+			<Provider store={store}>
+				<App />
+			</Provider>
 		</Router>
 	</React.StrictMode>
 );
