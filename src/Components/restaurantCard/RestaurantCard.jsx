@@ -1,9 +1,6 @@
-import axios from "axios";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 import { addRestaurant } from "../../Redux/Restaurant/RestaurantActions";
-import { motion } from "framer-motion";
 
 const RestaurantCard = ({
 	restaurantDetails: {
@@ -11,8 +8,9 @@ const RestaurantCard = ({
 		name,
 		city,
 		image,
+		discription,
 		rating,
-		deliveryTime,
+		deliverTime,
 		cheapestPrice,
 		menu,
 	},
@@ -28,8 +26,9 @@ const RestaurantCard = ({
 				city,
 				image,
 				rating,
-				deliveryTime,
+				deliverTime,
 				cheapestPrice,
+				discription,
 				menu,
 			};
 
@@ -48,14 +47,7 @@ const RestaurantCard = ({
 					className='h-40 w-64'
 				/>
 				<p className='text-sm font-semibold mt-4'>{name}</p>
-				<p className='text-xs text-gray-500'>
-					{menu &&
-						menu
-							?.map(
-								(el) => el.category[0].toUpperCase() + el.category.substring(1)
-							)
-							.join(", ")}
-				</p>
+				<p className='text-xs text-gray-500'>{discription}</p>
 				<div className='mt-4 flex justify-between pb-4 border-b'>
 					<span className='text-xs h-4 items-center  text-white px-2 bg-green-500 flex w-fit'>
 						<svg
@@ -72,12 +64,12 @@ const RestaurantCard = ({
 						{rating}
 					</span>
 					<span className='text-xs'>
-						{deliveryTime > 59
-							? `${Math.floor(deliveryTime / 60)} HRS ${deliveryTime % 60}`
-							: deliveryTime}{" "}
+						{deliverTime > 59
+							? `${Math.floor(deliverTime / 60)} HRS ${deliverTime % 60}`
+							: deliverTime}{" "}
 						MINS{" "}
 					</span>
-					<span className='text-xs'>{cheapestPrice * 2}₹ for two </span>
+					<span className='text-xs'>{cheapestPrice * 2}₹ for Two </span>
 				</div>
 				<div className='invisible flex group-hover/card:visible justify-center items-center pt-4 '>
 					<p className='text-sm font-semibold text-blue-500'>QUICK VIEW</p>

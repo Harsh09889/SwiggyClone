@@ -17,8 +17,8 @@ const index = () => {
 
 	const filtersReducer = (state, { type }) => {
 		switch (type) {
-			case "deliveryTime":
-				return "_sort=deliveryTime&_order=asc";
+			case "deliverTime":
+				return "_sort=deliverTime&_order=asc";
 
 			case "ratings":
 				return "_sort=rating&_order=desc";
@@ -93,9 +93,9 @@ const index = () => {
 							Relevance
 						</li>
 						<li
-							onClick={(e) => handleFilterChange("deliveryTime")}
+							onClick={(e) => handleFilterChange("deliverTime")}
 							className={`${
-								filters === "_sort=deliveryTime&_order=asc"
+								filters === "_sort=deliverTime&_order=asc"
 									? "font-bold border-black"
 									: ""
 							} cursor-pointer border-b-2 border-transparent hover:border-black h-full flex pb-2 items-end`}>

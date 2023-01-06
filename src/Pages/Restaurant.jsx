@@ -1,19 +1,27 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import DishCategoryWise from "../Components/RestaurantList/DishCategoryWise";
 import Skeleton from "react-loading-skeleton";
 import Cart from "../Components/Cart";
+import styles from "../styles/Restaurant.module.css";
 
 const Restaurant = () => {
 	const { id } = useParams();
 	let data = useSelector((state) => state.restaurant.restaurant);
 	let dishesData = useSelector((state) => state.restaurant.dishes);
-	let cartData = useSelector((state) => state.cart);
+	const [selectedMenu, setSelectedMenu] = useState(0);
+	const dishListRef = useRef(null);
 
 	const dishes = dishesData?.filter((dish) => {
 		return dish.restaurant.includes(id);
 	});
+
+	useEffect(() => {
+		document
+			.getElementById(`dishId${selectedMenu}`)
+			.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+	}, [selectedMenu]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -77,12 +85,7 @@ const Restaurant = () => {
 							<div className=''>
 								<h1 className='text-4xl leading-10'>{data.name}</h1>
 								<h1 className='text-sm text-gray-300 mb-4 font-semibold'>
-									{data?.menu
-										?.map(
-											(el) =>
-												el.category[0].toUpperCase() + el.category.substring(1)
-										)
-										.join(", ")}
+									{data?.discription}
 								</h1>
 								<h1 className='text-sm text-gray-300 mb-4 font-semibold'>
 									{data.city}
@@ -159,18 +162,29 @@ const Restaurant = () => {
 					</div>
 				</div>
 				<div className='max-w-[1200px] mt-8 w-full flex columns-4 mx-auto'>
-					<div className='col-span-1 w-1/3 flex flex-col items-end gap-4 '>
+					<div className='col-span-1 w-1/3 flex flex-col items-end'>
 						{data.menu?.map((menuItem, idx) => (
-							<p key={idx}>{menuItem.category}</p>
+							<p
+								className={`text-sm pr-8 border-r-4 cursor-pointer border-transparent mb-2 ${
+									selectedMenu === idx
+										? "text-[tomato] font-bold border-[tomato]"
+										: ""
+								}`}
+								onClick={(e) => setSelectedMenu(idx)}
+								key={idx}>
+								{menuItem.category}
+							</p>
 						))}
 					</div>
 
 					<div className='col-span-2 w-2/3  '>
 						{dishes ? (
-							<div className='h-[calc(100vh-10rem)] overflow-y-scroll '>
+							<div
+								className={` ${styles.dishListContainer} h-[calc(100vh-10rem)] overflow-y-scroll`}>
 								{data.menu?.map((dishObj, idx) => (
 									<DishCategoryWise
 										key={idx}
+										id={idx}
 										restaurantId={id}
 										category={dishObj.category}
 										foodItems={dishObj.foodItems}
