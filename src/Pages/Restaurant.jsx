@@ -110,11 +110,11 @@ const Restaurant = () => {
 									</div>
 									<div className='px-8  border-r flex flex-col justify-end'>
 										<span className=''>
-											{data.deliveryTime > 59
-												? `${Math.floor(data.deliveryTime / 60)} hour ${
-														data.deliveryTime % 60
+											{data.deliverTime > 59
+												? `${Math.floor(data.deliverTime / 60)} hour ${
+														data.deliverTime % 60
 												  }`
-												: data.deliveryTime}{" "}
+												: data.deliverTime}{" "}
 											mins{" "}
 										</span>
 										<p className='text-xs text-gray-300'>Delivery Time</p>
