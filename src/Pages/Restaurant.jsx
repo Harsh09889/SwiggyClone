@@ -1,17 +1,25 @@
-import React from "react";
+import React, { Suspense, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
+import DishCategoryWise from "../Components/RestaurantList/DishCategoryWise";
+import Skeleton from "react-loading-skeleton";
+import Cart from "../Components/Cart";
 
 const Restaurant = () => {
 	const { id } = useParams();
+	let data = useSelector((state) => state.restaurant.restaurant);
+	let dishesData = useSelector((state) => state.restaurant.dishes);
+	let cartData = useSelector((state) => state.cart);
 
-	const { data, loading, reFetch } = useFetch(
-		`http://localhost:8080/restaurants/${id}`
-	);
+	const dishes = dishesData?.filter((dish) => {
+		return dish.restaurant.includes(id);
+	});
 
-	console.log(data);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-	return loading ? (
+	return !data.id ? (
 		<h1>Loading</h1>
 	) : (
 		<>
@@ -31,11 +39,11 @@ const Restaurant = () => {
 								xmlns='http://www.w3.org/2000/svg'
 								viewBox='0 0 24 24'
 								fill='black'
-								class='w-4 h-4'>
+								className='w-4 h-4'>
 								<path
-									fill-rule='evenodd'
+									fillRule='evenodd'
 									d='M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z'
-									clip-rule='evenodd'
+									clipRule='evenodd'
 								/>
 							</svg>
 							<input
@@ -88,12 +96,12 @@ const Restaurant = () => {
 												fill='white'
 												className='h-full'>
 												<path
-													fill-rule='evenodd'
+													fillRule='evenodd'
 													d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z'
-													clip-rule='evenodd'
+													clipRule='evenodd'
 												/>
 											</svg>
-											{data.ratings}
+											{data.rating}
 										</span>
 										<p className='text-xs text-gray-300'>20+ Ratings</p>
 									</div>
@@ -150,10 +158,49 @@ const Restaurant = () => {
 						</div>
 					</div>
 				</div>
-				<div className='max-w-[1200px] w-full flex columns-4 h-screen bg-red-300 mx-auto'>
-					<div className='col-span-1 w-1/5  bg-black h-60'></div>
-					<div className='col-span-2 w-3/5 bg-blue-300 h-60'></div>
-					<div className='col-span-1 w-2/5 bg-green-300 h-60'></div>
+				<div className='max-w-[1200px] mt-8 w-full flex columns-4 mx-auto'>
+					<div className='col-span-1 w-1/3 flex flex-col items-end gap-4 '>
+						{data.menu?.map((menuItem, idx) => (
+							<p key={idx}>{menuItem.category}</p>
+						))}
+					</div>
+
+					<div className='col-span-2 w-2/3  '>
+						{dishes ? (
+							<div className='h-[calc(100vh-10rem)] overflow-y-scroll '>
+								{data.menu?.map((dishObj, idx) => (
+									<DishCategoryWise
+										key={idx}
+										restaurantId={id}
+										category={dishObj.category}
+										foodItems={dishObj.foodItems}
+									/>
+								))}
+							</div>
+						) : (
+							<div className='mt-16 flex gap-4 flex-col items-center justify-center'>
+								<Skeleton
+									height={100}
+									width={400}
+									enableAnimation={true}
+								/>
+								<Skeleton
+									height={100}
+									width={400}
+									enableAnimation={true}
+								/>
+								<Skeleton
+									height={100}
+									width={400}
+									enableAnimation={true}
+								/>
+							</div>
+						)}
+					</div>
+
+					<div className='col-span-1 w-1/3 '>
+						<Cart restaurantId={data.id} />
+					</div>
 				</div>
 			</div>
 		</>

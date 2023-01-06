@@ -9,105 +9,13 @@
 	],
 	"restaurants": [
 		{
-			"id": "1",
-			"name": "Punjabi Angithi",
-			"city": "New Delhi",
-			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
-			"ratings": "4.1",
-			"cheapestPrice": 400,
-			"deliveryTime": 71,
-			"menu": [
-				{
-					"category": "burger",
-					"foodItems": ["1", "2"]
-				},
-				{
-					"category": "pizza",
-					"foodItems": ["3", "4"]
-				},
-				{
-					"category": "momo",
-					"foodItems": ["5", "6"]
-				}
-			]
-		},
-		{
-			"id": "2",
-			"name": "Bistro",
-			"city": "New Delhi",
-			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
-			"ratings": "4.1",
-			"cheapestPrice": 400,
-			"deliveryTime": 61,
-			"menu": [
-				{
-					"category": "burger",
-					"foodItems": ["1", "2"]
-				},
-				{
-					"category": "pizza",
-					"foodItems": ["3", "4"]
-				},
-				{
-					"category": "momo",
-					"foodItems": ["5", "6"]
-				}
-			]
-		},
-		{
-			"id": "3",
-			"name": "MC Downalds",
-			"city": "New Delhi",
-			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
-			"ratings": "4.1",
-			"cheapestPrice": 400,
-			"deliveryTime": 51,
-			"menu": [
-				{
-					"category": "burger",
-					"foodItems": ["1", "2"]
-				},
-				{
-					"category": "pizza",
-					"foodItems": ["3", "4"]
-				},
-				{
-					"category": "momo",
-					"foodItems": ["5", "6"]
-				}
-			]
-		},
-		{
-			"id": "4",
-			"name": "Punjab Kesri",
-			"city": "New Delhi",
-			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
-			"ratings": "4.1",
-			"cheapestPrice": 400,
-			"deliveryTime": 41,
-			"menu": [
-				{
-					"category": "burger",
-					"foodItems": ["1", "2"]
-				},
-				{
-					"category": "pizza",
-					"foodItems": ["3", "4"]
-				},
-				{
-					"category": "momo",
-					"foodItems": ["5", "6"]
-				}
-			]
-		},
-		{
-			"id": "5",
-			"name": "KFC",
-			"city": "New Delhi",
-			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/g2pklvjnapzfoc4ackou",
-			"ratings": "4.1",
-			"cheapestPrice": 400,
+			"id": 1,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/aehf6qrfk9wxcwwciqik",
+			"name": "Sandwich Express",
+			"discription": "Street Food, Snacks, Beverages",
+			"rating": "4.5",
 			"deliveryTime": 30,
+			"cheapestPrice": 200,
 			"menu": [
 				{
 					"category": "burger",
@@ -121,7 +29,998 @@
 					"category": "momo",
 					"foodItems": ["5", "6"]
 				}
-			]
+			],
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 2,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jzzrlap0b4mcagd2jqxh",
+			"name": "Natural Ice Cream",
+			"discription": "Ice Cream, Desserts",
+			"rating": "4.8",
+			"deliveryTime": 23,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 3,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hhdghgxggucbb0fasvw2",
+			"name": "Arthur's Theme",
+			"discription": "European",
+			"rating": "4.2",
+			"deliveryTime": 34,
+			"cheapestPrice": 800,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 4,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xbgafxtq9pnlcxubsiaa",
+			"name": "Nashta Xperss by s kumar wadevale",
+			"discription": "South Indian, Snacks",
+			"rating": "4.1",
+			"deliveryTime": 33,
+			"cheapestPrice": 100,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 5,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hb1de28cpzghkopuj6kt",
+			"name": "Try Luck",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "4.2",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 6,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qqtltcyy30hc3fupq9xw",
+			"name": "Al Barkat",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "4.7",
+			"deliveryTime": 19,
+			"cheapestPrice": 300,
+			"discount": "10% off | Use TRYNEW"
+		},
+		{
+			"id": 7,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/zw45aus231aev2vibddx",
+			"name": "Theobroma",
+			"discription": "Bakery, Desserts",
+			"rating": "4.7",
+			"deliveryTime": 24,
+			"cheapestPrice": 500,
+			"discount": "30% off | Use SPECIALS"
+		},
+		{
+			"id": 8,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/whspalrlekdflpvz0ww0",
+			"name": "Hotel New Zaika",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "4.4",
+			"deliveryTime": 17,
+			"cheapestPrice": 300,
+			"discount": "10% off | Use TRYNEW"
+		},
+		{
+			"id": 9,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bknsmhh8eepnfzqgpkmm",
+			"name": "Dawat Restaurant",
+			"discription": "Chinese, North Indian",
+			"rating": "4.5",
+			"deliveryTime": 23,
+			"cheapestPrice": 300,
+			"discount": "60% off on all orders"
+		},
+		{
+			"id": 10,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/afqpghihhwbpynrmedgk",
+			"name": "Donna Cucina",
+			"discription": "Italian",
+			"rating": "4.6",
+			"deliveryTime": 33,
+			"cheapestPrice": 530,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 11,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/nebmpzgclwofwgloxxwx",
+			"name": "Little Italy",
+			"discription": "Italian",
+			"rating": "4.2",
+			"deliveryTime": 34,
+			"cheapestPrice": 1200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 12,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/c3vnq4oklx28q0jt3fhd",
+			"name": "Hotel Lazeez",
+			"discription": "North Indian",
+			"rating": "4.3",
+			"deliveryTime": 32,
+			"cheapestPrice": 350,
+			"discount": "60% off on all orders"
+		},
+		{
+			"id": 13,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/i39qgflu6azefcqs5phc",
+			"name": "Sweet Bengal",
+			"discription": "Sweets, Indian, Snacks, Desserts",
+			"rating": "4.5",
+			"deliveryTime": 23,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 14,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkkgzuunjres5rgebiwq",
+			"name": "Navyug Restaurant",
+			"discription": "North Indian, Chinese, Tandoor, Biryani",
+			"rating": "4.3",
+			"deliveryTime": 27,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 15,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/m6hbuc3gefoum40jfvp7",
+			"name": "Sante Spa Cuisine",
+			"discription": "Indian, Asian, Italian",
+			"rating": "4.2",
+			"deliveryTime": 31,
+			"cheapestPrice": 1000,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 16,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/kby99zotmxjuie1wcdrs",
+			"name": "Biriyani King",
+			"discription": "Biryani, North Indian, Chinese, Snacks",
+			"rating": "4.4",
+			"deliveryTime": 25,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 17,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/entn489swox8wqxy3e69",
+			"name": "Madras Tiffin Room",
+			"discription": "South Indian",
+			"rating": "4.2",
+			"deliveryTime": 27,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 18,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pdrfshhowjo9amc9opzh",
+			"name": "Kapila Kathi Kebab",
+			"discription": "Fast Food",
+			"rating": "4.4",
+			"deliveryTime": 24,
+			"cheapestPrice": 250,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 19,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rbpxi2z0tims9up6jqlc",
+			"name": "Shegaon Kachori",
+			"discription": "North Indian",
+			"rating": "4.3",
+			"deliveryTime": 29,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 20,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/polhhfmqgqwragwgt9b0",
+			"name": "Subway",
+			"discription": "Healthy Food, Salads, Snacks, Desserts, Beverages",
+			"rating": "4.1",
+			"deliveryTime": 29,
+			"cheapestPrice": 350,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 21,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/uhyd52fcwccs1d2gqbwy",
+			"name": "Itminaan Matka Biryani - Slow Cooked",
+			"discription": "Biryani, North Indian, Mughlai",
+			"rating": "4.5",
+			"deliveryTime": 36,
+			"cheapestPrice": 250,
+			"discount": "Flat ₹125 off on orders above ₹299"
+		},
+		{
+			"id": 22,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qb5vbxxtsjdlgeesohht",
+			"name": "Katakirr Misal",
+			"discription": "Maharashtrian, Snacks",
+			"rating": "4.3",
+			"deliveryTime": 27,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 23,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/r4b9vnl1d9tofkmehits",
+			"name": "sp chinese fast food",
+			"discription": "Chinese, Fast Food, Indian",
+			"rating": "4.7",
+			"deliveryTime": 28,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 24,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bsvazpye4eien43bsdsz",
+			"name": "BOX8 - Desi Meals",
+			"discription": "North Indian, Biryani, Thalis, Home Food",
+			"rating": "4.1",
+			"deliveryTime": 24,
+			"cheapestPrice": 250,
+			"discount": "Flat ₹125 off on orders above ₹299"
+		},
+		{
+			"id": 25,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bgcczyxive4uyzlc9bdq",
+			"name": "Bhuka Burger",
+			"discription": "Burgers",
+			"rating": "4.2",
+			"deliveryTime": 25,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 26,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/j7qdw1ub5llnhuatzfwf",
+			"name": "Hotel Al Zaika",
+			"discription": "North Indian, Chinese, Biryani",
+			"rating": "3.6",
+			"deliveryTime": 22,
+			"cheapestPrice": 350,
+			"discount": "70% off on all orders"
+		},
+		{
+			"id": 27,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xwdjksb2l4fk7zvbdi7m",
+			"name": "Hungrezy",
+			"discription": "Asian, Continental, Fast Food, Snacks, Combo, Desserts, Chinese, Indian, North I...",
+			"rating": "3.7",
+			"deliveryTime": 38,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 28,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wuiase03yfsygqhmnsjx",
+			"name": "The Indian Kitchen",
+			"discription": "North Indian",
+			"rating": "3.9",
+			"deliveryTime": 35,
+			"cheapestPrice": 350,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 29,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f34657e4f398eec0e714971b58f8be69",
+			"name": "Mandeep Multicusen",
+			"discription": "North Indian, Chinese, Snacks",
+			"rating": "3.9",
+			"deliveryTime": 23,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 30,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/nhfwaza7qtvtvcrhucd8",
+			"name": "Aaina",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.9",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "60% off on all orders"
+		},
+		{
+			"id": 31,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pagrk3ia3imuffgtlv3t",
+			"name": "Chafa Cafe and Studio",
+			"discription": "European, Continental",
+			"rating": "3.9",
+			"deliveryTime": 33,
+			"cheapestPrice": 900,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 32,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vznqad6m9aubtij2pgv4",
+			"name": "Sim Sim",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.8",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 33,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ka4ldiear2xewsvomgbf",
+			"name": "TASTE OF MALVAN",
+			"discription": "Maharashtrian, Thalis",
+			"rating": "3.7",
+			"deliveryTime": 36,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 34,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f34657e4f398eec0e714971b58f8be69",
+			"name": "Mandeep Multicusen",
+			"discription": "North Indian, Chinese, Snacks",
+			"rating": "3.5",
+			"deliveryTime": 23,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 35,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ntw38hjsn9ccuegauk4i",
+			"name": "THE CHICKSTER- Fried Chicken",
+			"discription": "American, Snacks, Beverages, Desserts, Fast Food, Burgers",
+			"rating": "3.9",
+			"deliveryTime": 24,
+			"cheapestPrice": 450,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 36,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/add7506dd63254228f05a1bed88ad1b1",
+			"name": "Rainbow Restaurant",
+			"discription": "Indian, Snacks",
+			"rating": "3.2",
+			"deliveryTime": 27,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 37,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/a8yewdrdw7ublpzqa8wo",
+			"name": "Zen Cafe",
+			"discription": "European",
+			"rating": "3.2",
+			"deliveryTime": 34,
+			"cheapestPrice": 800,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 38,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wqisor45ehonerfsffsb",
+			"name": "Nawabi Zaika",
+			"discription": "North Indian, Biryani, Chinese",
+			"rating": "3.7",
+			"deliveryTime": 27,
+			"cheapestPrice": 400,
+			"discount": "70% off on all orders"
+		},
+		{
+			"id": 39,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/krpwhfjb6efpnkn0wfmg",
+			"name": "JOBOS CAFE",
+			"discription": "Fast Food, Snacks",
+			"rating": "3.7",
+			"deliveryTime": 27,
+			"cheapestPrice": 350,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 40,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hsjwdfebsidawio2jzkk",
+			"name": "NH1 Bowls - Highway To North",
+			"discription": "North Indian, Punjabi, Home Food",
+			"rating": "3.8",
+			"deliveryTime": 23,
+			"cheapestPrice": 250,
+			"discount": "Flat ₹125 off on orders above ₹299"
+		},
+		{
+			"id": 41,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vja86zakpb45p1kgrwui",
+			"name": "German Bakery",
+			"discription": "Italian, German, Continental",
+			"rating": "3.9",
+			"deliveryTime": 29,
+			"cheapestPrice": 700,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 42,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/c3pvvxvbuxm1vo2gispx",
+			"name": "Tutto Bene - Desserts Cafe by Little Italy",
+			"discription": "Snacks, Desserts",
+			"rating": "3.4",
+			"deliveryTime": 30,
+			"cheapestPrice": 450,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 43,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/whlnkgraq0xzhevezp9y",
+			"name": "Bajrangi Tea And Snacks",
+			"discription": "Beverages, Snacks",
+			"rating": "3.5",
+			"deliveryTime": 30,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 44,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/eysklkavsxwzoe4h0o6d",
+			"name": "Teri Rajput",
+			"discription": "Street Food, North Indian, Desserts",
+			"rating": "3.6",
+			"deliveryTime": 26,
+			"cheapestPrice": 170,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 45,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/a9caqfoggvjzlc3vrz56",
+			"name": "Mealful Rolls - India's Biggest Rolls",
+			"discription": "Fast Food, Snacks, North Indian, Desserts",
+			"rating": "3.7",
+			"deliveryTime": 29,
+			"cheapestPrice": 250,
+			"discount": "Flat ₹125 off on orders above ₹299"
+		},
+		{
+			"id": 46,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/375f8d233613b205ab37f42d110edc88",
+			"name": "IT Biryaniwala",
+			"discription": "Biryani",
+			"rating": "3.8",
+			"deliveryTime": 30,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 47,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/eerr7j8ijoavho9xwycl",
+			"name": "Ahling Chinese Corner",
+			"discription": "Chinese",
+			"rating": "3.6",
+			"deliveryTime": 30,
+			"cheapestPrice": 800,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 48,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vymxne4qzolwgghbqntc",
+			"name": "Kwality Walls Frozen Dessert and Ice Cream Shop",
+			"discription": "Desserts, Ice Cream, Ice Cream Cakes",
+			"rating": "3.6",
+			"deliveryTime": 23,
+			"cheapestPrice": 200,
+			"discount": "20% off | Use SWIGGYIT"
+		},
+		{
+			"id": 49,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/so7ooiy2zdbivbpzuzec",
+			"name": "Yummy Pasta &amp; Fries",
+			"discription": "Pastas, Snacks, Beverages",
+			"rating": "3.8",
+			"deliveryTime": 29,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 50,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xdc9pcbmr1wfeirmaivf",
+			"name": "Creamy Cad Coffee",
+			"discription": "Beverages",
+			"rating": "3.8",
+			"deliveryTime": 27,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 51,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/h4aitnci163ne1vbrxee",
+			"name": "Shamiyana",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.8",
+			"deliveryTime": 18,
+			"cheapestPrice": 300,
+			"discount": "10% off | Use TRYNEW"
+		},
+		{
+			"id": 52,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ytu49va4qqhnaaazsggx",
+			"name": "Taste of Indore",
+			"discription": "Snacks, Indian",
+			"rating": "3.8",
+			"deliveryTime": 31,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 53,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/mjbhe7jpkyot6vmmlquj",
+			"name": "The Chinese Kitchen",
+			"discription": "Chinese",
+			"rating": "3.9",
+			"deliveryTime": 35,
+			"cheapestPrice": 350,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 54,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hzxza2bt20ihfjtggr9m",
+			"name": "Mankar Dosa",
+			"discription": "South Indian, Fast Food",
+			"rating": "3.9",
+			"deliveryTime": 27,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 55,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/nuobgl5y642e4bqivrla",
+			"name": "The Doner Company",
+			"discription": "Salads, Lebanese, Middle Eastern",
+			"rating": "3.4",
+			"deliveryTime": 29,
+			"cheapestPrice": 350,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 56,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xuiamdbtredygzajgiby",
+			"name": "Happy Singh",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.5",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 57,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/isqqhcr6nbyvbym90wpb",
+			"name": "A1 Restaurant",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.6",
+			"deliveryTime": 19,
+			"cheapestPrice": 300,
+			"discount": "10% off | Use TRYNEW"
+		},
+		{
+			"id": 58,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/182191ab163770437b62861a6f987709",
+			"name": "Starbucks Coffee",
+			"discription": "Beverages, Ice Cream",
+			"rating": "3.7",
+			"deliveryTime": 23,
+			"cheapestPrice": 400,
+			"discount": "20% off | Use TRYNEW"
+		},
+		{
+			"id": 59,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/r1t67tyorurhrywkwiny",
+			"name": "1441 Pizzeria",
+			"discription": "Italian, Pizzas, Pastas",
+			"rating": "3.8",
+			"deliveryTime": 29,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 60,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wrdwvlbexyvngupzmfe7",
+			"name": "Joshi Wadewale",
+			"discription": "Street Food, South Indian, Beverages",
+			"rating": "3.6",
+			"deliveryTime": 29,
+			"cheapestPrice": 90,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 61,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/mh88xanyjwhnqs9mgw8j",
+			"name": "Roopalli Veg Non-Veg",
+			"discription": "North Indian, Chinese",
+			"rating": "3.6",
+			"deliveryTime": 27,
+			"cheapestPrice": 500,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 62,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wxe49tgae5yy4jtedlxd",
+			"name": "Masala Punjab",
+			"discription": "North Indian, Chinese",
+			"rating": "3.8",
+			"deliveryTime": 24,
+			"cheapestPrice": 600,
+			"discount": "60% off on all orders"
+		},
+		{
+			"id": 63,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/buh5wmzdi8varrcaok0t",
+			"name": "Nandu's Paratha &amp; TND Fastfood",
+			"discription": "North Indian",
+			"rating": "3.8",
+			"deliveryTime": 25,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 64,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jyytpgytrlgjvoq7vlbi",
+			"name": "ROCKET MOMOS",
+			"discription": "Chinese, Beverages",
+			"rating": "3.8",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 65,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hrducs0x5nigfxr2r4rd",
+			"name": "Palace of Theme Cakes",
+			"discription": "Bakery",
+			"rating": "3.8",
+			"deliveryTime": 30,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 66,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/szqtjh9ry9i9jbxiph5t",
+			"name": "Copper Chocs",
+			"discription": "Desserts, Bakery",
+			"rating": "3.9",
+			"deliveryTime": 22,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 67,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vtku1aggow0z066mqvx5",
+			"name": "Foodland",
+			"discription": "Chinese, North Indian",
+			"rating": "3.9",
+			"deliveryTime": 25,
+			"cheapestPrice": 300,
+			"discount": "60% off on all orders"
+		},
+		{
+			"id": 68,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/umpfeqm3qhqtz7hqmnxh",
+			"name": "F K CATERERS",
+			"discription": "Chinese, Biryani, Fast Food",
+			"rating": "3.4",
+			"deliveryTime": 29,
+			"cheapestPrice": 250,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 69,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/mlwtkkods0ewao8gmlt5",
+			"name": "Tatya Misal House",
+			"discription": "Maharashtrian, Street Food",
+			"rating": "3.5",
+			"deliveryTime": 29,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 70,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/iiwqdd8goilbaeksio0n",
+			"name": "Hidden Place - The Hangout",
+			"discription": "North Indian, Biryani, Continental",
+			"rating": "3.6",
+			"deliveryTime": 38,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 71,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hgj7ge2qsnt2784vcuzg",
+			"name": "Sp Bakers Shop",
+			"discription": "Indian",
+			"rating": "3.7",
+			"deliveryTime": 33,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 72,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/awwkesgyug741tegue3b",
+			"name": "CONRAD PUNE",
+			"discription": "Indian, Asian",
+			"rating": "3.8",
+			"deliveryTime": 36,
+			"cheapestPrice": 2000,
+			"discount": "Flat ₹125 off on orders above ₹249"
+		},
+		{
+			"id": 73,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/gbmb2euviqtj0dpqjq09",
+			"name": "Buddha Paradise",
+			"discription": "South Indian, Fast Food, Chinese",
+			"rating": "3.6",
+			"deliveryTime": 25,
+			"cheapestPrice": 250,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 74,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ychk2gs9sw0nuxmfeoms",
+			"name": "Bombay Sandwich",
+			"discription": "Fast Food, Snacks, Beverages",
+			"rating": "3.6",
+			"deliveryTime": 29,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 75,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qa4b7930tctpdaceahud",
+			"name": "Cafe Durga - Wadia College",
+			"discription": "Beverages, Fast Food, Indian",
+			"rating": "3.8",
+			"deliveryTime": 24,
+			"cheapestPrice": 250,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 76,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/eyok5uhkouly2dl4fjl4",
+			"name": "Prem's",
+			"discription": "Indian, Chinese",
+			"rating": "3.8",
+			"deliveryTime": 34,
+			"cheapestPrice": 1000,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 77,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/kllztailoexm8neiogbv",
+			"name": "Gourmet Ice Cream Cakes by Baskin Robbins",
+			"discription": "Ice Cream Cakes, Desserts, Ice Cream, Bakery",
+			"rating": "3.8",
+			"deliveryTime": 25,
+			"cheapestPrice": 250,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 78,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yeybs1kte1ml6rvfldcj",
+			"name": "Grandmama's Cafe",
+			"discription": "Italian, American",
+			"rating": "3.8",
+			"deliveryTime": 35,
+			"cheapestPrice": 800,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 79,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hzxza2bt20ihfjtggr9m",
+			"name": "Mankar Dosa",
+			"discription": "South Indian, Fast Food",
+			"rating": "3.9",
+			"deliveryTime": 27,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 80,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vthbc7mcegsmihsjmnv3",
+			"name": "Mughal Tadka",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.9",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "10% off | Use TRYNEW"
+		},
+		{
+			"id": 81,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/gppnfxv8zyj40gkmtfhb",
+			"name": "Rewar park",
+			"discription": "North Indian, Biryani, Chinese, Mughlai, Punjabi, Kebabs, Beverages",
+			"rating": "3.4",
+			"deliveryTime": 24,
+			"cheapestPrice": 300,
+			"discount": "10% off | Use TRYNEW"
+		},
+		{
+			"id": 82,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lmdsb4pmvkbriabllidr",
+			"name": "Absolute China",
+			"discription": "Chinese",
+			"rating": "3.5",
+			"deliveryTime": 42,
+			"cheapestPrice": 200,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 83,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/j7qdw1ub5llnhuatzfwf",
+			"name": "Hotel Al Zaika",
+			"discription": "North Indian, Chinese, Biryani",
+			"rating": "3.6",
+			"deliveryTime": 22,
+			"cheapestPrice": 350,
+			"discount": "70% off on all orders"
+		},
+		{
+			"id": 84,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/n6nlzl0pp4doaiwjfo5k",
+			"name": "SAI SHIVNERI",
+			"discription": "North Indian, Indian, Chinese",
+			"rating": "3.7",
+			"deliveryTime": 27,
+			"cheapestPrice": 500,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 85,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bka69zfghkixwome10mx",
+			"name": "Cake Dior",
+			"discription": "Desserts",
+			"rating": "3.8",
+			"deliveryTime": 28,
+			"cheapestPrice": 350,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 86,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qurmw4sy3qgd20lysycm",
+			"name": "Taj Mahal Hotel",
+			"discription": "North Indian",
+			"rating": "3.6",
+			"deliveryTime": 27,
+			"cheapestPrice": 400,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 87,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dsrun22faylnn80l7zi7",
+			"name": "Khan kajana",
+			"discription": "North Indian, Chinese, Snacks",
+			"rating": "3.6",
+			"deliveryTime": 29,
+			"cheapestPrice": 150,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 88,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fqajqqkmjnuzhqb2djcc",
+			"name": "ZAZA 22 Spice Biryani",
+			"discription": "Biryani, North Indian, Awadhi",
+			"rating": "3.8",
+			"deliveryTime": 26,
+			"cheapestPrice": 250,
+			"discount": "Flat ₹125 off on orders above ₹299"
+		},
+		{
+			"id": 89,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wccecxoeqmald7iswkto",
+			"name": "Piazza pizza by Little Italy",
+			"discription": "Italian, Pizzas, Pastas, Desserts",
+			"rating": "3.8",
+			"deliveryTime": 37,
+			"cheapestPrice": 500,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 90,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hin0thakdftbklfxonzn",
+			"name": "The Burger House",
+			"discription": "American",
+			"rating": "3.8",
+			"deliveryTime": 30,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 91,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lulxldeuy0w2zzruiprn",
+			"name": "Senoritas Mexican kitchen by Little Italy",
+			"discription": "Pizzas, Mexican, Desserts",
+			"rating": "3.8",
+			"deliveryTime": 31,
+			"cheapestPrice": 500,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 92,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yslgjhbglnlyinjt9mxw",
+			"name": "The Cake &amp; Cream Factory",
+			"discription": "Bakery, Desserts",
+			"rating": "3.9",
+			"deliveryTime": 27,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 93,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ualjismbjdyfx5bb6srt",
+			"name": "Biryani Khana",
+			"discription": "Biryani, Chinese",
+			"rating": "3.9",
+			"deliveryTime": 25,
+			"cheapestPrice": 300,
+			"discount": "FREE DELIVERY"
+		},
+		{
+			"id": 94,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/x4e3oduk7cuwow8iwtbb",
+			"name": "Momo's Corrner",
+			"discription": "Chinese, Beverages",
+			"rating": "3.4",
+			"deliveryTime": 26,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 95,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/b9abxw7d7oz5qflxu2ij",
+			"name": "La Bouchee d'Or",
+			"discription": "Bakery, Desserts",
+			"rating": "3.5",
+			"deliveryTime": 28,
+			"cheapestPrice": 400,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 96,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tm6jfx64cgt1igsnsucy",
+			"name": "Crossways Gourmet Salads",
+			"discription": "Continental, Indian, Asian, Chinese, Burmese, Burgers",
+			"rating": "3.6",
+			"deliveryTime": 35,
+			"cheapestPrice": 500,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 97,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xontndis5sprzb9h8zwm",
+			"name": "Anna Idli",
+			"discription": "South Indian",
+			"rating": "3.7",
+			"deliveryTime": 26,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 98,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/viq1mjrvsv4eji3zrpha",
+			"name": "Tasty Corner",
+			"discription": "North Indian",
+			"rating": "3.8",
+			"deliveryTime": 32,
+			"cheapestPrice": 150,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 99,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/duxehhqpwtiqxmkmtynv",
+			"name": "Delicious Maggi",
+			"discription": "Snacks, Pastas, Beverages",
+			"rating": "3.6",
+			"deliveryTime": 25,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
+		},
+		{
+			"id": 100,
+			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/znme5rf0wdkxuyjqljpa",
+			"name": "Cafe Diamond King",
+			"discription": "Desserts, Juices",
+			"rating": "3.6",
+			"deliveryTime": 25,
+			"cheapestPrice": 300,
+			"discount": "50% off | Use WELCOME50"
 		}
 	],
 
@@ -129,11 +1028,11 @@
 		{
 			"id": "1",
 			"category": "burger",
-			"name": "Plain Burger",
+			"name": "another Burger",
 			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
 			"ratings": "307",
 			"price": 150,
-			"restaurant": "Punjabi Angithi",
+			"restaurant": [1, 2, 4, 5],
 			"desc": "This is a burger and burger it is. ",
 			"veg": true
 		},
@@ -144,7 +1043,7 @@
 			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
 			"ratings": "307",
 			"price": 150,
-			"restaurant": "Punjabi Angithi",
+			"restaurant": [1, 2, 4, 5],
 			"desc": "This is a burger and burger it is. ",
 			"veg": true
 		},
@@ -155,7 +1054,7 @@
 			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
 			"ratings": "307",
 			"price": 150,
-			"restaurant": "Punjabi Angithi",
+			"restaurant": ["1", "2", "4", "5"],
 			"desc": "This is a burger and burger it is. ",
 			"veg": true
 		},
@@ -166,7 +1065,7 @@
 			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
 			"ratings": "307",
 			"price": 150,
-			"restaurant": "Punjabi Angithi",
+			"restaurant": ["1", "2", "4", "5"],
 			"desc": "This is a burger and burger it is. ",
 			"veg": true
 		},
@@ -177,9 +1076,9 @@
 			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
 			"ratings": "307",
 			"price": 150,
-			"restaurant": "Punjabi Angithi",
+			"restaurant": ["1", "2", "4", "5"],
 			"desc": "This is a burger and burger it is. ",
-			"veg": true
+			"veg": false
 		},
 		{
 			"id": "6",
@@ -188,9 +1087,9 @@
 			"image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7fb21fceb84ef1f1e5377cf25fd46247",
 			"ratings": "307",
 			"price": 150,
-			"restaurant": "Punjabi Angithi",
+			"restaurant": ["1", "2", "4", "5"],
 			"desc": "This is a burger and burger it is. ",
-			"veg": true
+			"veg": false
 		}
 	]
 }
