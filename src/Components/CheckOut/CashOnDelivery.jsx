@@ -4,8 +4,8 @@ import React from "react";
 function CashOnDelivery() {
 	return (
 		<div className='p-10 mt-10 '>
-			<img
-				src=''
+			<img  style={{width:'70px',height:'50px'}}
+				src='https://cdn-icons-png.flaticon.com/512/6491/6491623.png'
 				alt='Cash'
 			/>
 			<br />
