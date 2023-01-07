@@ -15,9 +15,10 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import CustomFont from "./customFont";
-function LoginSignup({ switchLogin, setSwitchLogin }) {
+function LoginSignup({}) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
+	const [switchLogin, setSwitchLogin] = useState(false);
 	const [size, setSize] = React.useState("");
 
 	const sizes = "md";
