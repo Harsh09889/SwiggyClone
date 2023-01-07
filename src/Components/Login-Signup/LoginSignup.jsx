@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Drawer,
@@ -15,26 +15,16 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import CustomFont from "./customFont";
-function LoginSignup() {
-  const [switchLogin, setSwitchLogin] = useState(false);
+function LoginSignup({ open, loadlogin }) {
+  const [switchLogin, setSwitchLogin] = useState(loadlogin);
+
+  useEffect(() => {
+    if (isOpen) onClose();
+    else onOpen();
+  }, [open]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [size, setSize] = React.useState("");
-
-  const sizes = "md";
-  const handleClick = (newSize) => {
-    setSize(newSize);
-    setSwitchLogin(true);
-
-    onOpen();
-  };
-  const handleClickforSignUp = (newSize) => {
-    setSize(newSize);
-    setSwitchLogin(false);
-    onOpen();
-  };
-  //login switch
   const handlespanClick = () => {
     setSwitchLogin(true);
   };
@@ -45,12 +35,8 @@ function LoginSignup() {
 
   return (
     <Box>
-      <Box display={"flex"} gap={"20px"} justifyContent={"center"}>
-        <Button
-          mb={"100px"}
-          borderRadius={"0px"}
-          onClick={() => handleClick(sizes)}
-        >
+      {/* <Box display={"flex"} gap={"20px"} justifyContent={"center"}>
+        <Button mb={"100px"} borderRadius={"0px"} onClick={onOpen}>
           Login
         </Button>
         <Button
@@ -58,12 +44,12 @@ function LoginSignup() {
           color={"white"}
           colorScheme={"black"}
           bg={"black"}
-          onClick={() => handleClickforSignUp(sizes)}
+          onClick={onOpen}
         >
           Sign up
         </Button>
-      </Box>
-      <Drawer onClose={onClose} isOpen={isOpen} size={size}>
+      </Box> */}
+      <Drawer onClose={onClose} isOpen={isOpen} size={"md"}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
@@ -112,8 +98,15 @@ function LoginSignup() {
                     borderRadius={"0px"}
                     w={"100%"}
                     type={"number"}
-                    mb={"24px"}
                     mt={"40px"}
+                  />
+                  <Input
+                    placeholder={"Password"}
+                    padding={"34px"}
+                    borderRadius={"0px"}
+                    w={"100%"}
+                    type={"password"}
+                    mb={"24px"}
                   />
                   <Button
                     fontSize={"14px"}
@@ -131,12 +124,11 @@ function LoginSignup() {
                     By clicking on Login, I accept the Terms & Conditions &
                     Privacy Policy
                   </Text>
-                </Box>{" "}
+                </Box>
               </>
             ) : (
               //SIGNUP
               <>
-                {" "}
                 <Box
                   display={"flex"}
                   justifyContent={"space-between"}
@@ -145,11 +137,9 @@ function LoginSignup() {
                 >
                   <Box>
                     <Text color={"black"} fontSize={"33px"}>
-                      {" "}
                       Sign up
                     </Text>
                     <Text>
-                      or{" "}
                       <span
                         onClick={handlespanClick}
                         style={{
@@ -179,19 +169,27 @@ function LoginSignup() {
                     type={"number"}
                     mt={"40px"}
                   />
-                  <Input
-                    placeholder={"Name"}
-                    padding={"34px"}
-                    borderRadius={"0px"}
-                    w={"100%"}
-                    type={"text"}
-                  />
+
                   <Input
                     placeholder={"Email"}
                     padding={"34px"}
                     borderRadius={"0px"}
                     w={"100%"}
                     type={"email"}
+                  />
+                  <Input
+                    placeholder={"User_Name"}
+                    padding={"34px"}
+                    borderRadius={"0px"}
+                    w={"100%"}
+                    type={"text"}
+                  />
+                  <Input
+                    placeholder={"Password"}
+                    padding={"34px"}
+                    borderRadius={"0px"}
+                    w={"100%"}
+                    type={"password"}
                   />
                   <Text
                     color={"#5D8ED5"}
@@ -218,7 +216,7 @@ function LoginSignup() {
                     By creating an account, I accept the Terms & Conditions &
                     Privacy Policy
                   </Text>
-                </Box>{" "}
+                </Box>
               </>
             )}
           </DrawerBody>
