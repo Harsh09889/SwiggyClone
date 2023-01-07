@@ -38,7 +38,9 @@ const index = () => {
 
 	useEffect(() => {
 		(async () => {
-			const { data: dishes } = await axios.get(`http://localhost:8080/dishes`);
+			const { data: dishes } = await axios.get(
+				`https://swiggy-api.glitch.me/dishes`
+			);
 			dishes;
 			storeDispatch(addDishes(dishes));
 		})();
@@ -47,7 +49,7 @@ const index = () => {
 	const [filters, dispatch] = useReducer(filtersReducer, "");
 
 	const { data, loading, error, reFetch } = useFetch(
-		`http://localhost:8080/restaurants?${filters}`
+		`https://swiggy-api.glitch.me/restaurants?${filters}`
 	);
 
 	useEffect(() => {

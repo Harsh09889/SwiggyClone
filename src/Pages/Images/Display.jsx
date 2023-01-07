@@ -9,7 +9,7 @@ function Display({ dish }) {
 	useEffect(() => {
 		(async () => {
 			const { data } = await axios.get(
-				`http://localhost:8080/restaurants/${dish.restaurant[0]}`
+				`https://swiggy-api.glitch.me/restaurants/${dish.restaurant[0]}`
 			);
 			setRestaurant(data);
 		})();
