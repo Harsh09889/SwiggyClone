@@ -54,7 +54,9 @@ const Search = () => {
 
 		debounceRef.current = setTimeout(() => {
 			(async () => {
-				const { data } = await axios.get(`http://localhost:8080/dishes?${q}`);
+				const { data } = await axios.get(
+					`https://swiggy-api.glitch.me/dishes?${q}`
+				);
 				setDishesData(data);
 				let toMatch = new RegExp(dishSearch, "i");
 				const search = data.filter((dish) => dish.name.match(toMatch));
