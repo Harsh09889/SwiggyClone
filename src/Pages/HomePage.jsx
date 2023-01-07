@@ -1,11 +1,27 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import RestaurantList from "../Components/RestaurantList/";
+import { login, register } from "../Redux/Auth/AuthActions";
 
 const HomePage = () => {
 	const [carousel, setCarousel] = useState(0);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(
+			register({
+				name: "harsh",
+				username: "harsh09889",
+				email: "harsh@gmail.com",
+				password: "123",
+			})
+		);
+		dispatch(login({ email: "harsh@gmail.com", password: "123" }));
+	}, []);
 
 	return (
 		<div className='h-full min-h-screen'>
+			{/* Header Carousel Part of the Homepage */}
 			<div className='bg-[#171a29] relative'>
 				{carousel > 0 && (
 					<button
@@ -15,12 +31,12 @@ const HomePage = () => {
 							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
 							viewBox='0 0 24 24'
-							stroke-width='1.5'
+							strokeWidth='1.5'
 							stroke='currentColor'
-							class='w-6 h-6'>
+							className='w-6 h-6'>
 							<path
-								stroke-linecap='round'
-								stroke-linejoin='round'
+								strokeLinecap='round'
+								strokeLinejoin='round'
 								d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'
 							/>
 						</svg>
@@ -84,18 +100,21 @@ const HomePage = () => {
 							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
 							viewBox='0 0 24 24'
-							stroke-width='1.5'
+							strokeWidth='1.5'
 							stroke='currentColor'
-							class='w-6 h-6'>
+							className='w-6 h-6'>
 							<path
-								stroke-linecap='round'
-								stroke-linejoin='round'
+								strokeLinecap='round'
+								strokeLinejoin='round'
 								d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
 							/>
 						</svg>
 					</button>
 				)}
 			</div>
+
+			{/* Restaurants List */}
+			<RestaurantList />
 		</div>
 	);
 };
