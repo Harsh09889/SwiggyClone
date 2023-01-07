@@ -1,16 +1,32 @@
-import React from 'react'
-import { TextField, Grid, Button } from "@material-ui/core";
-
+import React from "react";
+// import { TextField, Grid, Button } from "@material-ui/core";
 
 function CashOnDelivery() {
-  return (
-    <div className='p-10 mt-10 '>
-        <img src="" alt="Cash" /><br />
-        <h1 className='text-xl font-semibold'>Cash/Pay on Delivery</h1><br />
-        <p className='text-sm font-light'>Pay cash at time of delivery. You can also pay online anytime after placing order.</p><br />
-        <button style={{color:'white',backgroundColor:'green',borderRadius:'3px',padding:'8px'}}>Pay On Delivery</button>
-    </div>
-  )
+	return (
+		<div className='p-10 mt-10 '>
+			<img
+				src=''
+				alt='Cash'
+			/>
+			<br />
+			<h1 className='text-xl font-semibold'>Cash/Pay on Delivery</h1>
+			<br />
+			<p className='text-sm font-light'>
+				Pay cash at time of delivery. You can also pay online anytime after
+				placing order.
+			</p>
+			<br />
+			<button
+				style={{
+					color: "white",
+					backgroundColor: "green",
+					borderRadius: "3px",
+					padding: "8px",
+				}}>
+				Pay On Delivery
+			</button>
+		</div>
+	);
 }
 
-export default CashOnDelivery
+export default CashOnDelivery;

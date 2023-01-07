@@ -1,5 +1,5 @@
 // import { motion } from "framer-motion";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import biryaniImg from "./Images/biriyani1-img.png";
 import burger from "./Images/burgur-img.png";
 import cakeDessert from "./Images/cakeDessert-img.png";
