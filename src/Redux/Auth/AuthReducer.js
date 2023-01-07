@@ -1,4 +1,12 @@
-import { LOGIN, LOGOUT, REGISTER } from "./AuthActions";
+import {
+	LOGIN,
+	LOGIN_FAILED,
+	LOGIN_SUCCESS,
+	LOGOUT,
+	REGISTER,
+	REGISTER_FAILED,
+	REGISTER_SUCCESS,
+} from "./AuthActions";
 
 const INITIAL_STATE = {
 	auth: {
@@ -9,35 +17,19 @@ const INITIAL_STATE = {
 	users: [],
 };
 
-// userSchema -> { username: "", name: "", email: "", password: "" }
+// userSchema -> { username: "", name: "", phn: "", password: "" }
 export function AuthReducer(state = INITIAL_STATE, { type, payload }) {
 	switch (type) {
-		case LOGIN: {
-			const presentUser = state.users.filter(
-				(user) => user.email === payload.email
-			);
-
-			if (presentUser.length === 0)
-				return {
-					...state,
-					auth: { isAuth: false, error: "User does Not Exist" },
-				};
-
-			if (presentUser[0].password !== payload.password)
-				return {
-					...state,
-					auth: { isAuth: false, error: "Username or Password is Wrong" },
-				};
-
+		case LOGIN_SUCCESS:
 			return {
 				...state,
-				auth: { isAuth: true, error: false },
-				currentUser: {
-					username: presentUser[0].username,
-					name: presentUser[0].name,
-				},
+				auth: { isAuth: true, error: null },
 			};
-		}
+		case LOGIN_FAILED:
+			return {
+				...state,
+				auth: { isAuth: false, error: payload.error },
+			};
 
 		case LOGOUT:
 			return {
@@ -49,20 +41,18 @@ export function AuthReducer(state = INITIAL_STATE, { type, payload }) {
 				currentUser: { username: "", name: "" },
 			};
 
-		case REGISTER: {
-			const isUser = state.users.filter(
-				(user) =>
-					user.username === payload.username || user.email === payload.email
-			);
+		case REGISTER_SUCCESS:
+			return { ...state, users: [...state.users, payload] };
 
-			if (isUser.length === 0)
-				return { ...state, users: [...state.users, payload] };
-
+		case REGISTER_FAILED:
 			return {
 				...state,
-				auth: { isAuth: false, error: "User Already Exists" },
+				auth: {
+					isAuth: false,
+					error: payload.error,
+				},
+				currentUser: { username: "", name: "" },
 			};
-		}
 
 		default:
 			return state;

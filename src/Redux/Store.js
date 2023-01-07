@@ -7,6 +7,7 @@ import CartReducer from "./Cart/CartReducer";
 import RestaurantReducer from "./Restaurant/RestaurantReducer";
 import logger from "redux-logger";
 import { AuthReducer } from "./Auth/AuthReducer";
+import thunk from "redux-thunk";
 
 const Reducer = combineReducers({
 	restaurant: RestaurantReducer,
@@ -14,5 +15,5 @@ const Reducer = combineReducers({
 	auth: AuthReducer,
 });
 
-export const store = createStore(Reducer, applyMiddleware(logger));
+export const store = createStore(Reducer, applyMiddleware(logger, thunk));
 store.subscribe(() => console.log(store.getState()));

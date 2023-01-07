@@ -23,9 +23,23 @@ const Search = () => {
 	// 	return dish.restaurant.includes(id);
 	// });
 
+	function handleVoiceSearch() {
+		var recognition = new webkitSpeechRecognition();
+
+		recognition.lang = "en-GB";
+
+		recognition.onresult = function (event) {
+			setDishSearch(event.results[0][0].transcript);
+			// data();
+		};
+		recognition.start();
+	}
+
 	function handleDishSearch(e) {
 		setDishSearch(e.target.value);
 	}
+
+	console.log(filters);
 
 	function handleFilterApply(filter) {
 		let newFilters = {};
@@ -34,7 +48,7 @@ const Search = () => {
 			console.log("came inside");
 			for (const k in filters) {
 				if (k !== key) {
-					newFilters[k] = filters.k;
+					newFilters[k] = filters[k];
 				}
 			}
 		} else {
@@ -78,14 +92,20 @@ const Search = () => {
 						placeholder='Search for restaurants and food...'
 					/>
 					{
-						<SearchIcon
-							style={{
-								fontSize: "32px",
-								fontWeight: "lighter",
-								color: "rgba(0,0,0,0.50)",
-								margin: "0 1rem",
-							}}
-						/>
+						<svg
+							onClick={handleVoiceSearch}
+							xmlns='http://www.w3.org/2000/svg'
+							fill='none'
+							viewBox='0 0 24 24'
+							strokeWidth='1.5'
+							stroke='currentColor'
+							class='w-6 h-6 mr-4'>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								d='M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z'
+							/>
+						</svg>
 					}
 				</div>
 				{/* <div className='my-8 flex gap-4'>
@@ -159,22 +179,36 @@ const Search = () => {
 				<div className='flex gap-4'>
 					<button
 						onClick={(e) => handleFilterApply()}
-						className='px-4 text-sm rounded-md text-[rgba(0,0,0,0.7)] bg-[#fafafa] border p-1'>
+						className={` ${
+							filters[""] && "bg-black text-white"
+						} px-4 text-sm rounded-md border p-1`}>
 						Sort By
 					</button>
 					<button
 						onClick={(e) => handleFilterApply("veg=true")}
-						className='px-4 text-sm rounded-md text-[rgba(0,0,0,0.7)] bg-[#fafafa] border p-1'>
+						className={` ${
+							filters["veg"]
+								? "bg-black text-white"
+								: "bg-[#fafafa] text-[rgba(0,0,0,0.7)]"
+						} px-4 text-sm rounded-md border p-1`}>
 						Veg
 					</button>
 					<button
 						onClick={(e) => handleFilterApply("price_lte=100")}
-						className='px-4 text-sm rounded-md text-[rgba(0,0,0,0.7)] bg-[#fafafa] border p-1'>
+						className={` ${
+							filters["price_lte"]
+								? "bg-black text-white"
+								: "bg-[#fafafa] text-[rgba(0,0,0,0.7)]"
+						} px-4 text-sm rounded-md   border p-1`}>
 						Less Than Rs 100
 					</button>
 					<button
 						onClick={(e) => handleFilterApply("rating_gte=4")}
-						className='px-4 text-sm rounded-md text-[rgba(0,0,0,0.7)] bg-[#fafafa] border p-1'>
+						className={` ${
+							filters["rating_gte"]
+								? "bg-black text-white"
+								: "bg-[#fafafa] text-[rgba(0,0,0,0.7)]"
+						} px-4 text-sm rounded-md border p-1`}>
 						Rated 4+
 					</button>
 				</div>
