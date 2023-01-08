@@ -26,7 +26,7 @@ const Search = () => {
 	// 	return dish.restaurant.includes(id);
 	// });
 
-	console.log(sort);
+	// console.log(sort);
 
 	function handleVoiceSearch() {
 		var recognition = new webkitSpeechRecognition();
@@ -44,13 +44,13 @@ const Search = () => {
 		setDishSearch(e.target.value);
 	}
 
-	console.log(filters);
+	// console.log(filters);
 
 	function handleFilterApply(filter) {
 		let newFilters = {};
 		let key = filter.split("=")[0];
 		if (filters[key]) {
-			console.log("came inside");
+			// console.log("came inside");
 			for (const k in filters) {
 				if (k !== key) {
 					newFilters[k] = filters[k];
@@ -80,7 +80,7 @@ const Search = () => {
 				let toMatch = new RegExp(dishSearch, "i");
 				const search = data.filter((dish) => dish.name.match(toMatch));
 				setSearchResults(search);
-				console.log(`https://swiggy-api.glitch.me/dishes?${q}${sort}`);
+				// console.log(`https://swiggy-api.glitch.me/dishes?${q}${sort}`);
 			})();
 		}, 700);
 	}, [dishSearch, filters, sort]);

@@ -10,22 +10,22 @@ export const LOGIN_FAILED = "LOGIN_FAILED";
 export function login(loginDetails) {
 	return async function reduxThunkAction(dispatch, getState) {
 		const { data } = await axios.get(`https://swiggy-api.glitch.me/users`);
-		console.log("users from the server -> ", data);
+		// console.log("users from the server -> ", data);
 		if (data.length > 0) {
 			const curUser = data.filter((user) => user.phn === loginDetails.phn);
 
-			console.log("This is the result of matched User -> ", curUser);
+			// console.log("This is the result of matched User -> ", curUser);
 
 			if (curUser.length === 0) {
 				dispatch({
 					type: LOGIN_FAILED,
-					payload: { isError: "User Does not Exist." },
+					payload: { error: "User Does not Exist." },
 				});
 			} else {
 				if (curUser[0].password !== loginDetails.password) {
 					dispatch({
 						type: LOGIN_FAILED,
-						payload: { isError: "Phone Number or Password is not correct." },
+						payload: { error: "Phone Number or Password is not correct." },
 					});
 				} else {
 					dispatch({
@@ -37,7 +37,7 @@ export function login(loginDetails) {
 		} else {
 			dispatch({
 				type: LOGIN_FAILED,
-				payload: { isError: "User Does not Exist." },
+				payload: { error: "User Does not Exist." },
 			});
 		}
 	};

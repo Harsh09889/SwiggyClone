@@ -4,6 +4,7 @@ import CheckoutCredit from "../Components/CheckOut/CheckoutCredit";
 import Wallet from "../Components/CheckOut/Wallet";
 import UPI from "../Components/CheckOut/UPI";
 import { useSelector } from "react-redux";
+import Cart from "../Components/Cart/";
 
 function Checkout({ setOpenLoginSignup }) {
 	const [checkoutState, setCheckoutState] = useState(4);
@@ -289,6 +290,10 @@ function Checkout({ setOpenLoginSignup }) {
 				</div>
 			</div>
 			<div className='w-[40%] mt-14 p-5  '>
+				<div className='bg-white w-[80%]'>
+					<Cart ischeckout={true} />
+				</div>
+
 				<div className=' border w-[80%]  bg-white p-8'>
 					<input
 						className='font-extralight w-80  bg-gray-100 h-8 p-2'

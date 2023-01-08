@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Cart from "./Cart";
+import { logout } from "../Redux/Auth/AuthActions";
 
 const apiKey = "b7ef12df4384db73cd258227099f7ce8";
 
@@ -14,6 +15,7 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 	const navigate = useNavigate();
 	const isAuth = useSelector((state) => state.auth.auth.isAuth);
 	const curUser = useSelector((state) => state.auth.currentUser?.name);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition((pos) => {
@@ -31,7 +33,6 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 				`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
 			)
 			.then((res) => {
-				console.log(res);
 				setCurrLocation(res.data.locality);
 			});
 	}, []);
@@ -115,7 +116,13 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 						</li>
 						<li
 							className='flex gap-2'
-							onClick={(e) => !isAuth && setOpenLoginSignup((p) => !p)}>
+							onClick={(e) => {
+								if (!isAuth) {
+									setOpenLoginSignup((p) => !p);
+								} else {
+									dispatch(logout());
+								}
+							}}>
 							{
 								<svg
 									class='_1GTCc'

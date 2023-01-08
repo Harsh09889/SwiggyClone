@@ -16,4 +16,3 @@ const Reducer = combineReducers({
 });
 
 export const store = createStore(Reducer, applyMiddleware(logger, thunk));
-store.subscribe(() => console.log(store.getState()));

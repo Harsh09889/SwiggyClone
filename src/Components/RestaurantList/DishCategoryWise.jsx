@@ -10,14 +10,14 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 
 	const [currentUserCartDishes, setCurrentUserCartDishes] = useState([]);
 
-	console.log("isAuth", isAuth);
+	// console.log("isAuth", isAuth);
 
 	useEffect(() => {
 		if (isAuth && cartItems.length > 1) {
 			const [currentUserCart] = cartItems.filter(
 				(elem) => elem.username === currentUser.username
 			);
-			console.log(currentUserCart);
+			// console.log(currentUserCart);
 			setCurrentUserCartDishes(currentUserCart.cartItems);
 		}
 	}, [cartItems]);
