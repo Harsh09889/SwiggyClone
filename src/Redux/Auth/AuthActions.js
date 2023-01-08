@@ -1,3 +1,4 @@
+import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
@@ -69,15 +70,23 @@ export function register(registerDetails) {
 		const { data } = await axios.get(`https://swiggy-api.glitch.me/users`);
 
 		if (data.length > 0) {
-			const curUser = data.filter((user) => user.phn === registerDetails.phn);
+			const curUser = data.filter(
+				(user) =>
+					user.phn === registerDetails.phn ||
+					user.username === registerDetails.username
+			);
 			if (curUser.length === 0) {
-				const { data } = await axios.post(
+				const resp = await axios.post(
 					`https://swiggy-api.glitch.me/users`,
 					registerDetails
 				);
 
-				if (data.ok) dispatch({ type: REGISTER_SUCCESS });
-				else
+				if (resp.status === 201) {
+					dispatch({
+						type: REGISTER_SUCCESS,
+						payload: { registerStatus: resp.status },
+					});
+				} else
 					dispatch({
 						type: REGISTER_FAILED,
 						payload: {
@@ -91,13 +100,17 @@ export function register(registerDetails) {
 				});
 			}
 		} else {
-			const { data } = await axios.post(
+			const resp = await axios.post(
 				`https://swiggy-api.glitch.me/users`,
 				registerDetails
 			);
 
-			if (data.ok) dispatch({ type: REGISTER_SUCCESS });
-			else
+			if (resp.status === 201) {
+				dispatch({
+					type: REGISTER_SUCCESS,
+					payload: { registerStatus: resp.status },
+				});
+			} else
 				dispatch({
 					type: REGISTER_FAILED,
 					payload: { error: "Could Not Register, Try again after some time." },

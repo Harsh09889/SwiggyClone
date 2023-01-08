@@ -12,6 +12,7 @@ const INITIAL_STATE = {
 	auth: {
 		isAuth: false,
 		error: false,
+		registerStatus: 0,
 	},
 	currentUser: null,
 };
@@ -22,7 +23,7 @@ export function AuthReducer(state = INITIAL_STATE, { type, payload }) {
 		case LOGIN_SUCCESS:
 			return {
 				...state,
-				auth: { isAuth: true, error: null },
+				auth: { isAuth: true, error: null, registerStatus: 0 },
 				currentUser: payload,
 			};
 		case LOGIN_FAILED:
@@ -42,7 +43,10 @@ export function AuthReducer(state = INITIAL_STATE, { type, payload }) {
 			};
 
 		case REGISTER_SUCCESS:
-			return { ...state, users: [...state.users, payload] };
+			return {
+				...state,
+				auth: { ...state.auth, registerStatus: payload.registerStatus },
+			};
 
 		case REGISTER_FAILED:
 			return {

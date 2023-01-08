@@ -7,8 +7,7 @@ import Search from "../Pages/Search";
 import LandingPage from "./LandingPage/LandingPage";
 import ThankyouPage from "../Pages/ThankyouPage";
 
-
-import Otp from "./CheckOut/Otp/Otp"
+import Otp from "./CheckOut/Otp/Otp";
 
 const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 	return (
@@ -25,15 +24,30 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 				/>
 				<Route
 					path='/'
-					element={<HomePage />}
+					element={
+						<HomePage
+							setOpenLoginSignup={setOpenLoginSignup}
+							setLoadLogin={setLoadLogin}
+						/>
+					}
 				/>
 				<Route
 					path='/search'
-					element={<Search />}
+					element={
+						<Search
+							setOpenLoginSignup={setOpenLoginSignup}
+							setLoadLogin={setLoadLogin}
+						/>
+					}
 				/>
 				<Route
 					path='/restaurants/:id'
-					element={<Restaurant />}
+					element={
+						<Restaurant
+							setOpenLoginSignup={setOpenLoginSignup}
+							setLoadLogin={setLoadLogin}
+						/>
+					}
 				/>
 				<Route
 					path='/checkout'
@@ -46,22 +60,31 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 				/>
 				<Route
 					path='*'
-					element={<NotFound />}
+					element={
+						<NotFound
+							setOpenLoginSignup={setOpenLoginSignup}
+							setLoadLogin={setLoadLogin}
+						/>
+					}
 				/>
-				
-				
-				
-				
-				
-				
-				
+
 				<Route
 					path='/otp'
-					element={<Otp/>}
-					/>
+					element={
+						<Otp
+							setOpenLoginSignup={setOpenLoginSignup}
+							setLoadLogin={setLoadLogin}
+						/>
+					}
+				/>
 				<Route
 					path='/thankyou'
-					element={<ThankyouPage />}
+					element={
+						<ThankyouPage
+							setOpenLoginSignup={setOpenLoginSignup}
+							setLoadLogin={setLoadLogin}
+						/>
+					}
 				/>
 			</Routes>
 		</>
