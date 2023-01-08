@@ -7,6 +7,9 @@ import Search from "../Pages/Search";
 import LandingPage from "./LandingPage/LandingPage";
 import ThankyouPage from "../Pages/ThankyouPage";
 
+
+import Otp from "./CheckOut/Otp/Otp"
+
 const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 	return (
 		<>
@@ -45,6 +48,17 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 					path='*'
 					element={<NotFound />}
 				/>
+				
+				
+				
+				
+				
+				
+				
+				<Route
+					path='/otp'
+					element={<Otp/>}
+					/>
 				<Route
 					path='/thankyou'
 					element={<ThankyouPage />}
