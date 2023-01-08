@@ -8,7 +8,7 @@ const HomePage = () => {
 	const [carousel, setCarousel] = useState(0);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(login({ phn: 8527718561, password: "123" }));
+		// dispatch(login({ phn: 8527718561, password: "123" }));
 	}, []);
 
 	return (

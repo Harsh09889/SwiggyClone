@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
 
-function index() {
+function index({ ischeckout }) {
 	let isAuth = useSelector((state) => state.auth.auth.isAuth);
 	let curUser = useSelector((state) => state.auth.currentUser);
 	const cart = useSelector((state) => state.cart);
@@ -13,7 +13,7 @@ function index() {
 		[currentCart] = cart.filter((elem) => elem.username === curUser.username);
 	}
 
-	console.log(isAuth);
+	// console.log(isAuth);
 
 	const cartItems = currentCart ? currentCart.cartItems : [];
 
@@ -42,13 +42,15 @@ function index() {
 								0}
 						</p>
 					</h1>
-					<Link
-						to={"/checkout"}
-						className='bg-green-500 text-white w-full block text-center py-3
+					{!ischeckout && (
+						<Link
+							to={"/checkout"}
+							className='bg-green-500 text-white w-full block text-center py-3
 				 mt-4'>
-						{" "}
-						Checkout
-					</Link>
+							{" "}
+							Checkout
+						</Link>
+					)}
 				</div>
 			</>
 		) : (

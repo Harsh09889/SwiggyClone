@@ -5,6 +5,7 @@ import NotFound from "../Pages/NotFound";
 import Restaurant from "../Pages/Restaurant";
 import Search from "../Pages/Search";
 import LandingPage from "./LandingPage/LandingPage";
+import ThankyouPage from "../Pages/ThankyouPage";
 
 
 import Otp from "./CheckOut/Otp/Otp"
@@ -57,6 +58,10 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 				<Route
 					path='/otp'
 					element={<Otp/>}
+					/>
+				<Route
+					path='/thankyou'
+					element={<ThankyouPage />}
 				/>
 			</Routes>
 		</>
