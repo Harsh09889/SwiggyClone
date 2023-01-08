@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Checkout from "../Pages/Checkout";
 import HomePage from "../Pages/HomePage";
 import NotFound from "../Pages/NotFound";
@@ -8,8 +8,11 @@ import LandingPage from "./LandingPage/LandingPage";
 import ThankyouPage from "../Pages/ThankyouPage";
 
 import Otp from "./CheckOut/Otp/Otp";
+import { useSelector } from "react-redux";
 
 const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
+	const isAuth = useSelector((state) => state.auth.auth.isAuth);
+
 	return (
 		<>
 			<Routes>
@@ -58,10 +61,25 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 						/>
 					}
 				/>
+
 				<Route
-					path='*'
+					path='/otp'
 					element={
-						<NotFound
+						isAuth ? (
+							<Otp
+								setOpenLoginSignup={setOpenLoginSignup}
+								setLoadLogin={setLoadLogin}
+							/>
+						) : (
+							<Navigate to={"/"} />
+						)
+					}
+				/>
+
+				<Route
+					path='/thankyou'
+					element={
+						<ThankyouPage
 							setOpenLoginSignup={setOpenLoginSignup}
 							setLoadLogin={setLoadLogin}
 						/>
@@ -69,18 +87,9 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 				/>
 
 				<Route
-					path='/otp'
+					path='*'
 					element={
-						<Otp
-							setOpenLoginSignup={setOpenLoginSignup}
-							setLoadLogin={setLoadLogin}
-						/>
-					}
-				/>
-				<Route
-					path='/thankyou'
-					element={
-						<ThankyouPage
+						<NotFound
 							setOpenLoginSignup={setOpenLoginSignup}
 							setLoadLogin={setLoadLogin}
 						/>

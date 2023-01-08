@@ -24,7 +24,7 @@ export default function Otp({ setOpenLoginSignup, setLoadLogin }) {
 
 		setTimeout(() => {
 			setLoading(false);
-		}, 1000);
+		}, 2500);
 	}, []);
 
 	const veryfyOtp = (e) => {
@@ -116,7 +116,7 @@ export default function Otp({ setOpenLoginSignup, setLoadLogin }) {
 								</div>{" "}
 								<p>
 									One Time Password (OTP) successfully sent to the phone number
-									linked to your card ending with <strong>6726</strong>.
+									linked to your card.
 								</p>{" "}
 								<form
 									name='otpForm'

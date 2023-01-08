@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
@@ -8,12 +8,26 @@ import { login } from "../Redux/Auth/AuthActions";
 
 const HomePage = ({ setOpenLoginSignup, setLoadLogin }) => {
 	const [carousel, setCarousel] = useState(0);
-	const dispatch = useDispatch();
+	const firstRender = useRef(0);
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
-		// dispatch(login({ phn: 8527718561, password: "123" }));
+		if (firstRender.current < 1) {
+			setTimeout(() => {
+				setLoading(false);
+			}, 2500);
+		}
 	}, []);
 
-	return (
+	return loading ? (
+		<div className='h-screen w-screen grid place-items-center bg-[#fbfbfb]'>
+			<img
+				className=''
+				src='https://cdn.dribbble.com/users/58386/screenshots/11074623/media/c2c3b6f8a9d948c2cf901880e63e929f.gif'
+				alt='burgerLoading'
+			/>
+		</div>
+	) : (
 		<>
 			<Navbar
 				setOpenLoginSignup={setOpenLoginSignup}
