@@ -156,7 +156,7 @@ const Restaurant = () => {
 								</div>
 							</div>
 						</div>
-						<div className='h-[80%] w-60 border relative pt-8 px-4'>
+						<div className='h-[80%] hidden md:block  w-60 border relative pt-8 px-4'>
 							<p className='absolute font-bold -top-5 -left-7 bg-[#171a29] p-2 pr-3 text-xl'>
 								OFFER
 							</p>
@@ -191,8 +191,8 @@ const Restaurant = () => {
 						</div>
 					</div>
 				</div>
-				<div className='max-w-[1200px] mt-8 w-full flex columns-4 mx-auto'>
-					<div className='col-span-1 w-1/3 flex flex-col items-end'>
+				<div className='max-w-[1200px] mt-8 w-full flex columns-1 justify-center sm:justify-start sm:columns-3 md:columns-4 mx-auto'>
+					<div className=' col-span-1 w-1/3 hidden sm:flex flex-col items-end'>
 						{dishSearch.length > 0 && (
 							<p
 								className={`text-sm pr-8 border-r-4 cursor-pointer border-transparent mb-2 ${
@@ -266,7 +266,7 @@ const Restaurant = () => {
 						)}
 					</div>
 
-					<div className='col-span-1 w-1/3 '>
+					<div className='hidden md:block col-span-1 w-1/3 '>
 						<Cart restaurantId={data.id} />
 					</div>
 				</div>

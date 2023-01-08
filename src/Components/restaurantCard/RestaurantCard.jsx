@@ -46,15 +46,17 @@ const RestaurantCard = ({
 			initial={{ opacity: 0, top: "-3rem" }}
 			animate={{ opacity: 1, top: "0" }}
 			className='h-full relative flex flex-col group/card w-full p-5 px-6 border border-transparent hover:border-gray-200 hover:shadow-md'>
-			<div onClick={(e) => handleNavigate(id)}>
+			<div
+				className='flex flex-col items-center'
+				onClick={(e) => handleNavigate(id)}>
 				<img
 					src={image}
 					alt={name}
 					className='relative h-40 w-64 z-0'
 				/>
-				<p className='text-sm font-semibold mt-4'>{name}</p>
-				<p className='text-xs text-gray-500'>{discription}</p>
-				<div className='mt-4 flex justify-between pb-4 border-b'>
+				<p className='text-sm w-64 font-semibold mt-4'>{name}</p>
+				<p className='text-xs w-64  text-gray-500'>{discription}</p>
+				<div className='mt-4 flex w-64 justify-between pb-4 border-b'>
 					<span className='text-xs h-4 items-center  text-white px-2 bg-green-500 flex w-fit'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -93,11 +95,10 @@ const RestaurantCard = ({
 									{" "}
 									MENU{" "}
 								</h1>
-								<div className='col-span-1 w-1/3 flex flex-col items-end'>
+								<div className='flex flex-col p-4'>
 									{menu?.map((menuItem, idx) => (
 										<p
-											className={`text-sm pr-8 border-r-4 cursor-pointer border-transparent mb-2`}
-											onClick={(e) => setSelectedMenu(idx)}
+											className={`text-sm mb-2`}
 											key={idx}>
 											{menuItem.category}
 										</p>

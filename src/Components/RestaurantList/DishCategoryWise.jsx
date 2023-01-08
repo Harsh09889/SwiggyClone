@@ -10,11 +10,14 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 
 	const [currentUserCartDishes, setCurrentUserCartDishes] = useState([]);
 
+	console.log("isAuth", isAuth);
+
 	useEffect(() => {
 		if (isAuth && cartItems.length > 1) {
 			const [currentUserCart] = cartItems.filter(
 				(elem) => elem.username === currentUser.username
 			);
+			console.log(currentUserCart);
 			setCurrentUserCartDishes(currentUserCart.cartItems);
 		}
 	}, [cartItems]);
@@ -79,37 +82,39 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 									<p className='text-gray-400 text-xs'>{food.desc} </p>
 								</div>
 								<div className='relative px-4 flex'>
-									<div className='h-20 w-30'>
+									<div className=''>
 										<img
-											className='h-full w-full rounded-md'
+											className='h-[80px] w-[120px] rounded-md'
 											src={food.image}
 											alt={food.name}
 										/>
 									</div>
-									<div className='absolute text-xs flex justify-between items-center h-8 w-24 shadow-lg px-2  -bottom-2 left-1/2 -translate-x-1/2  bg-white'>
-										<button
-											onClick={(e) => handleRemoveFromCart(foodId)}
-											className='text-lg font-bold text-green-400 w-4 h-full'>
-											{" "}
-											{"-"}{" "}
-										</button>
+									{isAuth && (
+										<div className='absolute text-xs flex justify-between items-center h-8 w-24 shadow-lg px-2  -bottom-2 left-1/2 -translate-x-1/2  bg-white'>
+											<button
+												onClick={(e) => handleRemoveFromCart(foodId)}
+												className='text-lg font-bold text-green-400 w-4 h-full'>
+												{" "}
+												{"-"}{" "}
+											</button>
 
-										{/* //TODO */}
-										<p>
-											{currentUserCartDishes.filter(
-												(elem) =>
-													elem.dishId === foodId &&
-													elem.restaurantId === restaurantId
-											)[0]?.quantity || 0}
-										</p>
+											{/* //TODO */}
+											<p>
+												{currentUserCartDishes.filter(
+													(elem) =>
+														elem.dishId === foodId &&
+														elem.restaurantId === restaurantId
+												)[0]?.quantity || 0}
+											</p>
 
-										<button
-											onClick={(e) => handleAddToCart(foodId, food.price)}
-											className='text-lg font-bold text-green-400 w-4 h-full'>
-											{" "}
-											{"+"}{" "}
-										</button>
-									</div>
+											<button
+												onClick={(e) => handleAddToCart(foodId, food.price)}
+												className='text-lg font-bold text-green-400 w-4 h-full'>
+												{" "}
+												{"+"}{" "}
+											</button>
+										</div>
+									)}
 								</div>
 							</div>
 						)
@@ -140,35 +145,37 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 							<div className='relative px-4 flex'>
 								<div className='h-20 w-30'>
 									<img
-										className='h-full w-full rounded-md'
+										className='h-[80px] w-[120px] rounded-md'
 										src={food.image}
 										alt={food.name}
 									/>
 								</div>
-								<div className='absolute text-xs flex justify-between items-center h-8 w-24 shadow-lg px-2  -bottom-2 left-1/2 -translate-x-1/2  bg-white'>
-									<button
-										onClick={(e) => handleRemoveFromCart(foodId)}
-										className='text-lg font-bold text-green-400 w-4 h-full'>
-										{" "}
-										{"-"}{" "}
-									</button>
+								{isAuth && (
+									<div className='absolute text-xs flex justify-between items-center h-8 w-24 shadow-lg px-2  -bottom-2 left-1/2 -translate-x-1/2  bg-white'>
+										<button
+											onClick={(e) => handleRemoveFromCart(foodId)}
+											className='text-lg font-bold text-green-400 w-4 h-full'>
+											{" "}
+											{"-"}{" "}
+										</button>
 
-									{/* //TODO */}
-									<p>
-										{currentUserCartDishes.filter(
-											(elem) =>
-												elem.dishId === foodId &&
-												elem.restaurantId === restaurantId
-										)[0]?.quantity || 0}
-									</p>
+										{/* //TODO */}
+										<p>
+											{currentUserCartDishes.filter(
+												(elem) =>
+													elem.dishId === foodId &&
+													elem.restaurantId === restaurantId
+											)[0]?.quantity || 0}
+										</p>
 
-									<button
-										onClick={(e) => handleAddToCart(foodId, food.price)}
-										className='text-lg font-bold text-green-400 w-4 h-full'>
-										{" "}
-										{"+"}{" "}
-									</button>
-								</div>
+										<button
+											onClick={(e) => handleAddToCart(foodId, food.price)}
+											className='text-lg font-bold text-green-400 w-4 h-full'>
+											{" "}
+											{"+"}{" "}
+										</button>
+									</div>
+								)}
 							</div>
 						</div>
 					);

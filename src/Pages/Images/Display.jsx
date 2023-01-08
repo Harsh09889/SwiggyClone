@@ -1,10 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import DishSearchComponent from "../../Components/RestaurantList/DishSearchComponent";
+import { addRestaurant } from "../../Redux/Restaurant/RestaurantActions";
 
 function Display({ dish }) {
 	const [restaurant, setRestaurant] = useState(null);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		(async () => {
@@ -15,21 +19,29 @@ function Display({ dish }) {
 		})();
 	}, []);
 
+	function handleNavigate(e) {
+		dispatch(addRestaurant(restaurant));
+		navigate(`/restaurants/${restaurant.id}`);
+	}
+
 	return !restaurant ? null : (
 		<div
+			onClick={handleNavigate}
 			key={dish.id}
 			className='h-56 m-5 bg-white rounded-[20px] p-8'>
-			<Link to={`/restaurants/${dish.restaurant[0]}`}>
+			{/* <Link to={`/restaurants/${dish.restaurant[0]}`}> */}
+			<div className='hidden md:block'>
 				<h1 className='text-lg leading-5 font-bold first-letter:capitalize'>
 					{restaurant.name}
 				</h1>
 				<p className='text-sm mb-4'>{restaurant.discription}</p>
-			</Link>
+			</div>
 			<DishSearchComponent
 				dish={dish}
 				restaurantId={1}
 				isSearch={true}
 			/>
+			{/* </Link> */}
 		</div>
 	);
 }

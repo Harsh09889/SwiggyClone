@@ -7,24 +7,6 @@ export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILED = "LOGIN_FAILED";
 
-//payload: {phn: 0123456789, password:}
-
-// export function reduxThunkActionCreator(url) {
-// 	return function reduxThunkAction(dispatch, getState) {
-// 		if (getState().products.electronic.length === 0) {
-// 			fetch(url)
-// 				.then((res) => res.json())
-// 				.then((data) => {
-// 					console.log(data);
-// 					dispatch({
-// 						type: "ELECTRONIC",
-// 						data,
-// 					});
-// 				});
-// 		}
-// 	};
-// }
-
 export function login(loginDetails) {
 	return async function reduxThunkAction(dispatch, getState) {
 		const { data } = await axios.get(`https://swiggy-api.glitch.me/users`);
@@ -48,7 +30,7 @@ export function login(loginDetails) {
 				} else {
 					dispatch({
 						type: LOGIN_SUCCESS,
-						payload: { name: curUser.name, username: curUser.username },
+						payload: { name: curUser[0].name, username: curUser[0].username },
 					});
 				}
 			}

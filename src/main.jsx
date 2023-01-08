@@ -6,13 +6,16 @@ import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Provider } from "react-redux";
 import { store } from "./Redux/Store";
+import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<Router>
-			<Provider store={store}>
-				<App />
-			</Provider>
+			<ChakraProvider>
+				<Provider store={store}>
+					<App />
+				</Provider>
+			</ChakraProvider>
 		</Router>
 	</React.StrictMode>
 );
