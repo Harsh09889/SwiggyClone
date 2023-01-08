@@ -1,6 +1,20 @@
-import React from "react";
+import {useState} from "react";
 
 export default function CheckoutCredit() {
+  const [firstName,setFirstName]=useState('')
+    const [cardNumber,setCardNumber]=useState('')
+    const [cvv,setCvv]=useState('')
+    const [expiry,setExpiry]=useState('')
+    const [error,setError]=useState(false)
+
+    const handleSubmit=(e)=>{
+      e.preventDefault();
+      if(firstName.length==0||cardNumber.length==0){
+          setError(true)
+      }
+    
+  }
+
   return (
     <>
       <div className="text-xl font-semibold">
@@ -49,16 +63,28 @@ export default function CheckoutCredit() {
       </div>
       <hr style={{ border: "1px solid black" }} /> <br />
 	  <div>
-		<form className="m-4">
+		<form className="m-4" onSubmit={handleSubmit}>
 			
 
-			<input className="w-[350px] h-12 p-4  border border-x-stone-600" type="text" placeholder="Card Number" /><br />
+			<input className="w-[350px] h-12 p-4  border border-x-stone-600" type="text" placeholder="Card Number" maxLength={16} onChange={e=>setCardNumber(e.target.value)} /><br />
+      {error&&cardNumber.length<=0?
+               <label className="text-red-500 text-xs">★ Card Number can't be Empty</label>:""}
 			<div className="flex">
-			<input className="w-[200px] h-12 p-4 border border-x-stone-500 " type="text"  placeholder="Valid through(MM/YY)"/>
-<input className="w-[150px] h-12 p-4 border border-x-stone-500 "  type="text" placeholder="CVV"/>
+        <div>
 
+			<input className="w-[200px] h-12 p-4 border border-x-stone-500 " type="text"  placeholder="Valid through(MM/YY)" onChange={e=>setExpiry(e.target.value)}/>
+      {error&&expiry.length<=0?
+               <label className="text-red-500 text-xs">★ MM/YY Required</label>:""}<br/>
+               </div>
+               <div>
+<input className="w-[150px] h-12 p-4 border border-x-stone-500 "  type="text" placeholder="CVV" maxLength={3} onChange={e=>setCvv(e.target.value)} />
+{error&&cvv.length<=0?
+               <label className="text-red-500 text-xs">★ CVV Required</label>:""}<br/>
+        </div>
 			</div>
-			<input className="w-[350px] h-12 p-4  border border-x-stone-500" type="text" placeholder="Name on Card"/><br /><br />
+			<input className="w-[350px] h-12 p-4  border border-x-stone-500" type="text" placeholder="Name on Card"  onChange={e=>setFirstName(e.target.value)}/><br />
+      {error&&firstName.length<=0?
+               <label className="text-red-500 text-xs">★ Name can't be Empty</label>:""}<br/>
 			<input type="checkbox" />&nbsp;
 			<label className='text-xs font-light'>Securely save this card for a faster checkout next time.</label><br /><br /> 	
 			<input className="w-[350px] h-12   text-white text-lg bg-green-500" type="submit" name='submit' />
