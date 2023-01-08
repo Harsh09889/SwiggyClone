@@ -11,12 +11,13 @@ import {
 	DrawerCloseButton,
 	Image,
 	Input,
+	useToast,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import CustomFont from "./customFont";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../Redux/Auth/AuthActions";
+import { login, register } from "../../Redux/Auth/AuthActions";
 import { useNavigate } from "react-router-dom";
 function LoginSignup({ open, loadlogin }) {
 	const [switchLogin, setSwitchLogin] = useState(loadlogin);
@@ -36,22 +37,67 @@ function LoginSignup({ open, loadlogin }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const auth = useSelector((state) => state.auth.auth.isAuth);
 	const error = useSelector((state) => state.auth.auth.error);
+	const registerStatus = useSelector((state) => state.auth.auth.registerStatus);
 	const firstRender = useRef(0);
 	const dispatch = useDispatch();
+	const toast = useToast();
+	const [trackSignup, setTrackSignup] = useState(0);
 
 	function handleLogin() {
 		if (!loginState.phn || !loginState.password) {
-			alert("Please Enter Both Phone and Password");
+			toast({
+				title: "Please fill all the details...",
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				position: "top",
+			});
 		} else {
 			dispatch(login({ ...loginState, phn: +loginState.phn }));
 		}
+	}
+
+	function handleSignup() {
+		if (
+			!signupState.name ||
+			!signupState.phn ||
+			!signupState.username ||
+			!signupState.password
+		) {
+			toast({
+				title: "Please fill all the details...",
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				position: "top",
+			});
+		} else if (!signupState.phn.length === 10) {
+			toast({
+				title: "Enter a valid Phone number",
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				position: "top",
+			});
+		} else {
+			const registerDetails = { ...signupState, phn: +signupState.phn };
+			console.log(registerDetails);
+			dispatch(register(registerDetails));
+		}
+		setTrackSignup(trackSignup + 1);
 	}
 
 	useEffect(() => {
 		if (firstRender.current > 1) {
 			console.log(firstRender.current);
 			if (auth) {
-				alert("Succesfully Logged in");
+				toast({
+					title: "Login successful!!",
+					status: "success",
+					duration: 2000,
+					isClosable: true,
+					position: "top",
+				});
 				onClose();
 				setLoginState({
 					phn: 0,
@@ -59,7 +105,14 @@ function LoginSignup({ open, loadlogin }) {
 				});
 				navigate("/");
 			} else {
-				error && alert(error);
+				error &&
+					toast({
+						title: error,
+						status: "error",
+						duration: 2000,
+						isClosable: true,
+						position: "top",
+					});
 			}
 		}
 
@@ -67,9 +120,40 @@ function LoginSignup({ open, loadlogin }) {
 	}, [auth, error]);
 
 	useEffect(() => {
-		if (isOpen) onClose();
-		else onOpen();
+		if (firstRender.current > 3) {
+			console.log("inside open", firstRender.current);
+			if (isOpen) onClose();
+			else onOpen();
+		}
+		firstRender.current++;
 	}, [open]);
+
+	const firstRenderRegister = useRef(0);
+	useEffect(() => {
+		if (firstRenderRegister.current > 1) {
+			if (registerStatus === 201) {
+				toast({
+					title: "Register successful!!",
+					status: "success",
+					duration: 2000,
+					isClosable: true,
+					position: "top",
+				});
+				dispatch(
+					login({ phn: +signupState.phn, password: signupState.password })
+				);
+			} else if (registerStatus >= 400) {
+				toast({
+					title: "Register Not Successful Please after some time!!",
+					status: "error",
+					duration: 2000,
+					isClosable: true,
+					position: "top",
+				});
+			}
+		}
+		firstRenderRegister.current++;
+	}, [registerStatus]);
 
 	//signup switch
 	const handlespanSignUp = () => {
@@ -137,7 +221,7 @@ function LoginSignup({ open, loadlogin }) {
 										onChange={(e) =>
 											setLoginState((p) => ({
 												...p,
-												[e.target.name]: e.target.value,
+												[e.target.name]: e.target.value.replace(/[^0-9]/g, ""),
 											}))
 										}
 										mt={"40px"}
@@ -217,23 +301,47 @@ function LoginSignup({ open, loadlogin }) {
 										padding={"34px"}
 										borderRadius={"0px"}
 										w={"100%"}
+										name='phn'
+										value={signupState.phn || ""}
+										onChange={(e) =>
+											setSignupState((p) => ({
+												...p,
+												[e.target.name]: e.target.value,
+											}))
+										}
 										type={"number"}
 										mt={"40px"}
 									/>
 
-									<Input
-										placeholder={"Email"}
-										padding={"34px"}
-										borderRadius={"0px"}
-										w={"100%"}
-										type={"email"}
-									/>
 									<Input
 										placeholder={"User_Name"}
 										padding={"34px"}
 										borderRadius={"0px"}
 										w={"100%"}
 										type={"text"}
+										name='username'
+										value={signupState.username}
+										onChange={(e) =>
+											setSignupState((p) => ({
+												...p,
+												[e.target.name]: e.target.value,
+											}))
+										}
+									/>
+									<Input
+										placeholder={"Name"}
+										padding={"34px"}
+										borderRadius={"0px"}
+										w={"100%"}
+										type={"text"}
+										name='name'
+										value={signupState.name}
+										onChange={(e) =>
+											setSignupState((p) => ({
+												...p,
+												[e.target.name]: e.target.value,
+											}))
+										}
 									/>
 									<Input
 										placeholder={"Password"}
@@ -241,6 +349,14 @@ function LoginSignup({ open, loadlogin }) {
 										borderRadius={"0px"}
 										w={"100%"}
 										type={"password"}
+										name='password'
+										value={signupState.password}
+										onChange={(e) =>
+											setSignupState((p) => ({
+												...p,
+												[e.target.name]: e.target.value,
+											}))
+										}
 									/>
 									<Text
 										color={"#5D8ED5"}
@@ -258,7 +374,8 @@ function LoginSignup({ open, loadlogin }) {
 										borderRadius={"0px"}
 										w={"100%"}
 										bg={"#fc8019"}
-										padding={"27px"}>
+										padding={"27px"}
+										onClick={handleSignup}>
 										CONTINUE
 									</Button>
 									<Text

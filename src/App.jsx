@@ -16,15 +16,11 @@ function App() {
 				open={openLoginSignup}
 				loadlogin={loadlogin}
 			/>
-			<Navbar
-				setOpenLoginSignup={setOpenLoginSignup}
-				setLoadLogin={setLoadLogin}
-			/>
+
 			<AllRoutes
 				setOpenLoginSignup={setOpenLoginSignup}
 				setLoadLogin={setLoadLogin}
 			/>
-			<Footer />
 		</>
 	);
 }

@@ -5,6 +5,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Cart from "./Cart";
 import { logout } from "../Redux/Auth/AuthActions";
+import { useToast } from "@chakra-ui/react";
 
 const apiKey = "b7ef12df4384db73cd258227099f7ce8";
 
@@ -16,6 +17,7 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 	const isAuth = useSelector((state) => state.auth.auth.isAuth);
 	const curUser = useSelector((state) => state.auth.currentUser?.name);
 	const dispatch = useDispatch();
+	const toast = useToast();
 
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition((pos) => {
@@ -115,12 +117,19 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 							</Link>
 						</li>
 						<li
-							className='flex gap-2'
+							className='flex gap-2 cursor-pointer'
 							onClick={(e) => {
 								if (!isAuth) {
 									setOpenLoginSignup((p) => !p);
 								} else {
 									dispatch(logout());
+									toast({
+										title: "You have been Logged out...",
+										status: "success",
+										duration: 2000,
+										isClosable: true,
+										position: "top",
+									});
 								}
 							}}>
 							{

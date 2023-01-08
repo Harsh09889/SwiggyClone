@@ -13,11 +13,11 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 	// console.log("isAuth", isAuth);
 
 	useEffect(() => {
-		if (isAuth && cartItems.length > 1) {
+		if (isAuth && cartItems.length > 0) {
 			const [currentUserCart] = cartItems.filter(
 				(elem) => elem.username === currentUser.username
 			);
-			// console.log(currentUserCart);
+			console.log(currentUserCart);
 			setCurrentUserCartDishes(currentUserCart.cartItems);
 		}
 	}, [cartItems]);
@@ -27,7 +27,7 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 	function handleAddToCart(dishId, price) {
 		// Add cart payload will have {username,dishId,restaurantId,price}
 		const payload = {
-			username: "harsh09889",
+			username: currentUser.username,
 			dishId,
 			restaurantId,
 			price,
@@ -38,7 +38,7 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 	function handleRemoveFromCart(dishId) {
 		// Add cart payload will have {username,dishId,restaurantId,price}
 		const payload = {
-			username: "harsh09889",
+			username: currentUser.username,
 			dishId,
 			restaurantId,
 		};

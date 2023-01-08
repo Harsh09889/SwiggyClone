@@ -1,6 +1,6 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./CartActions";
 
-const INITIAL_STATE = [{}];
+const INITIAL_STATE = [];
 
 export default function CartReducer(state = INITIAL_STATE, { type, payload }) {
 	switch (type) {

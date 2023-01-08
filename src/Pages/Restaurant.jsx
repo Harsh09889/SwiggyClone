@@ -6,8 +6,10 @@ import Skeleton from "react-loading-skeleton";
 import Cart from "../Components/Cart";
 import styles from "../styles/Restaurant.module.css";
 import DishSearchComponent from "../Components/RestaurantList/DishSearchComponent";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
-const Restaurant = () => {
+const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 	const { id } = useParams();
 	let data = useSelector((state) => state.restaurant.restaurant);
 	let dishesData = useSelector((state) => state.restaurant.dishes);
@@ -55,14 +57,23 @@ const Restaurant = () => {
 	}, []);
 
 	return !data.id ? (
-		<h1>Loading</h1>
+		<>
+			<Navbar
+				setOpenLoginSignup={setOpenLoginSignup}
+				setLoadLogin={setLoadLogin}
+			/>
+			<h1>Loading</h1>
+			<Footer />
+		</>
 	) : (
 		<>
-			<div className='mx-auto'>
+			<Navbar
+				setOpenLoginSignup={setOpenLoginSignup}
+				setLoadLogin={setLoadLogin}
+			/>
+			<div className='mx-auto mb-12'>
 				<ul className='text-xs mx-auto max-w-[1200px] flex py-1 gap-3'>
 					<li>Home</li>
-					<li>/</li>
-					<li>{data.city}</li>
 					<li>/</li>
 					<li>{data.name}</li>
 				</ul>
@@ -156,7 +167,7 @@ const Restaurant = () => {
 								</div>
 							</div>
 						</div>
-						<div className='h-[80%] hidden md:block  w-60 border relative pt-8 px-4'>
+						<div className='h-[80%] hidden md:block border-white w-60 border-2 relative pt-8 px-4'>
 							<p className='absolute font-bold -top-5 -left-7 bg-[#171a29] p-2 pr-3 text-xl'>
 								OFFER
 							</p>
@@ -271,6 +282,7 @@ const Restaurant = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

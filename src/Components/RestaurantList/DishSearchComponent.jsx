@@ -10,7 +10,7 @@ function DishSearchComponent({ dish: food, restaurantId, isSearch, vegOnly }) {
 	const [currentUserCartDishes, setCurrentUserCartDishes] = useState([]);
 
 	useEffect(() => {
-		if (isAuth && cartItems.length > 1) {
+		if (isAuth && cartItems.length > 0) {
 			const [currentUserCart] = cartItems.filter(
 				(elem) => elem.username === currentUser.username
 			);
@@ -23,7 +23,7 @@ function DishSearchComponent({ dish: food, restaurantId, isSearch, vegOnly }) {
 	function handleAddToCart(dishId, price) {
 		// Add cart payload will have {username,dishId,restaurantId,price}
 		const payload = {
-			username: "harsh09889",
+			username: currentUser.username,
 			dishId,
 			restaurantId,
 			price,
@@ -34,7 +34,7 @@ function DishSearchComponent({ dish: food, restaurantId, isSearch, vegOnly }) {
 	function handleRemoveFromCart(dishId) {
 		// Add cart payload will have {username,dishId,restaurantId,price}
 		const payload = {
-			username: "harsh09889",
+			username: currentUser.username,
 			dishId,
 			restaurantId,
 		};
@@ -68,13 +68,11 @@ function DishSearchComponent({ dish: food, restaurantId, isSearch, vegOnly }) {
 						<h1 className='text-sm mb-2'>₹ {food.price} </h1>
 					</div>
 					<div className='relative px-4 flex w-1/3'>
-						<div className='h-20 w-30'>
-							<img
-								className=' rounded-md'
-								src={food.image}
-								alt={food.name}
-							/>
-						</div>
+						<img
+							className='h-[80px] w-[120px] rounded-md'
+							src={food.image}
+							alt={food.name}
+						/>
 						{isAuth && (
 							<div className='absolute text-xs flex justify-between items-center h-8 w-24 shadow-lg px-2  -bottom-2 left-1/2 -translate-x-1/2  bg-white'>
 								<button
@@ -131,13 +129,11 @@ function DishSearchComponent({ dish: food, restaurantId, isSearch, vegOnly }) {
 					<h1 className='text-sm mb-2'>₹ {food.price} </h1>
 				</div>
 				<div className='relative px-4 flex w-1/3'>
-					<div className='h-20 w-30'>
-						<img
-							className=' rounded-md'
-							src={food.image}
-							alt={food.name}
-						/>
-					</div>
+					<img
+						className='h-[80px] w-[120px] rounded-md'
+						src={food.image}
+						alt={food.name}
+					/>
 					{isAuth && (
 						<div className='absolute text-xs flex justify-between items-center h-8 w-24 shadow-lg px-2  -bottom-2 left-1/2 -translate-x-1/2  bg-white'>
 							<button
