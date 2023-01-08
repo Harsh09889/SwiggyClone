@@ -14,7 +14,9 @@ function DishSearchComponent({ dish: food, restaurantId, isSearch, vegOnly }) {
 			const [currentUserCart] = cartItems.filter(
 				(elem) => elem.username === currentUser.username
 			);
-			setCurrentUserCartDishes(currentUserCart.cartItems);
+			if (currentUserCart) {
+				setCurrentUserCartDishes(currentUserCart.cartItems);
+			}
 		}
 	}, [cartItems]);
 
