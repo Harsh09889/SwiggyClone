@@ -1,19 +1,6 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./CartActions";
 
-const INITIAL_STATE = [
-	{
-		username: "",
-		cartItems: [
-			{
-				dishId: "",
-				restaurantId: "",
-				price: 0,
-				totalPrice: 0,
-				quantity: 0,
-			},
-		],
-	},
-];
+const INITIAL_STATE = [{}];
 
 export default function CartReducer(state = INITIAL_STATE, { type, payload }) {
 	switch (type) {

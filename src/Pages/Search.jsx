@@ -11,6 +11,7 @@ import roll from "./Images/rolls-img.png";
 import Display from "./Images/Display";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Search = () => {
 	const [dishSearch, setDishSearch] = useState("");
@@ -18,10 +19,14 @@ const Search = () => {
 	const [filters, setFilters] = useState({});
 	const [dishesData, setDishesData] = useState([]);
 	const debounceRef = useRef(null);
+	const [sort, setSort] = useState("");
+	const [isSortBox, setIsSortBox] = useState(false);
 
 	// const dishes = dishesData?.filter((dish) => {
 	// 	return dish.restaurant.includes(id);
 	// });
+
+	console.log(sort);
 
 	function handleVoiceSearch() {
 		var recognition = new webkitSpeechRecognition();
@@ -69,16 +74,16 @@ const Search = () => {
 		debounceRef.current = setTimeout(() => {
 			(async () => {
 				const { data } = await axios.get(
-					`https://swiggy-api.glitch.me/dishes?${q}`
+					`https://swiggy-api.glitch.me/dishes?${q}${sort}`
 				);
 				setDishesData(data);
 				let toMatch = new RegExp(dishSearch, "i");
 				const search = data.filter((dish) => dish.name.match(toMatch));
 				setSearchResults(search);
-				console.log("called");
+				console.log(`https://swiggy-api.glitch.me/dishes?${q}${sort}`);
 			})();
 		}, 700);
-	}, [dishSearch, filters]);
+	}, [dishSearch, filters, sort]);
 
 	return (
 		<div className='min-h-screen'>
@@ -92,7 +97,6 @@ const Search = () => {
 						placeholder='Search for restaurants and food...'
 					/>
 					{
-
 						<svg
 							onClick={handleVoiceSearch}
 							xmlns='http://www.w3.org/2000/svg'
@@ -107,7 +111,6 @@ const Search = () => {
 								d='M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z'
 							/>
 						</svg>
-
 					}
 				</div>
 				{/* <div className='my-8 flex gap-4'>
@@ -180,11 +183,57 @@ const Search = () => {
 				<br />
 				<div className='flex gap-4'>
 					<button
-						onClick={(e) => handleFilterApply()}
+						onMouseEnter={(e) => setIsSortBox(true)}
+						onMouseLeave={(e) => setIsSortBox(false)}
 						className={` ${
 							filters[""] && "bg-black text-white"
-						} px-4 text-sm rounded-md border p-1`}>
+						} px-4 text-sm rounded-md relative border p-1`}>
 						Sort By
+						{isSortBox && (
+							<AnimatePresence>
+								<motion.div
+									initial={{ scaleY: 0 }}
+									animate={{ scaleY: 1 }}
+									className='absolute flex flex-col gap-4 w-[200%] -left-1/2 top-8 p-4 border bg-white shadow-lg'>
+									<div className='flex gap-2 text-sm'>
+										<input
+											type='radio'
+											name='sort'
+											id='relevance'
+											onClick={(e) => setSort("")}
+										/>
+										<label htmlFor='relevance'>Relevance</label>
+									</div>
+									<div className='flex gap-2 text-sm'>
+										<input
+											type='radio'
+											name='sort'
+											id='deliverTime'
+											onClick={(e) => setSort("_sort=deliverTime&_order=asc")}
+										/>
+										<label htmlFor='deliverTime'>Delivery Time</label>
+									</div>
+									<div className='flex gap-2 text-sm'>
+										<input
+											type='radio'
+											name='sort'
+											id='pricelth'
+											onClick={(e) => setSort("_sort=price&_order=asc")}
+										/>
+										<label htmlFor='pricelth'>Price Low to High</label>
+									</div>
+									<div className='flex gap-2 text-sm'>
+										<input
+											type='radio'
+											name='sort'
+											id='pricelth'
+											onClick={(e) => setSort("_sort=price&_order=desc")}
+										/>
+										<label htmlFor='pricehtl'>Price High to Low</label>
+									</div>
+								</motion.div>
+							</AnimatePresence>
+						)}
 					</button>
 					<button
 						onClick={(e) => handleFilterApply("veg=true")}
@@ -217,7 +266,7 @@ const Search = () => {
 				<br />
 				<div className='w-full max-w-[950px] mx-auto '>
 					{dishSearch.length > 0 && (
-						<div className='grid grid-cols-2  bg-slate-100 '>
+						<div className='grid grid-cols-1 md:grid-cols-2  bg-slate-100 '>
 							{searchResults.map((dish) => (
 								<Display
 									key={dish.id}

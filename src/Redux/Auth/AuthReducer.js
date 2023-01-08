@@ -13,8 +13,7 @@ const INITIAL_STATE = {
 		isAuth: false,
 		error: false,
 	},
-	currentUser: { username: "", name: "" },
-	users: [],
+	currentUser: null,
 };
 
 // userSchema -> { username: "", name: "", phn: "", password: "" }
@@ -24,6 +23,7 @@ export function AuthReducer(state = INITIAL_STATE, { type, payload }) {
 			return {
 				...state,
 				auth: { isAuth: true, error: null },
+				currentUser: payload,
 			};
 		case LOGIN_FAILED:
 			return {

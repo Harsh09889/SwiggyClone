@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import RestaurantList from "../Components/RestaurantList/";
-import { login, register } from "../Redux/Auth/AuthActions";
+import { login } from "../Redux/Auth/AuthActions";
 
 const HomePage = () => {
 	const [carousel, setCarousel] = useState(0);
@@ -13,7 +13,6 @@ const HomePage = () => {
 
 	return (
 		<div className='h-full min-h-screen'>
-			{/* Header Carousel Part of the Homepage */}
 			<div className='bg-[#171a29] relative'>
 				{carousel > 0 && (
 					<button

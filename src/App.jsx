@@ -2,22 +2,28 @@ import AllRoutes from "./Components/AllRoutes";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import LoginSignup from "./Components/Login-Signup/LoginSignup";
 
 function App() {
-	const [switchLogin, setSwitchLogin] = useState(false);
 	const isAuth = useSelector((state) => state.auth.auth.isAuth);
+	const [openLoginSignup, setOpenLoginSignup] = useState(false);
+	const [loadlogin, setLoadLogin] = useState(true);
 	return (
 		<>
 			<LoginSignup
-				switchLogin={switchLogin}
-				setSwitchLogin={setSwitchLogin}
+				open={openLoginSignup}
+				loadlogin={loadlogin}
 			/>
-
-			<Navbar />
-			<AllRoutes />
+			<Navbar
+				setOpenLoginSignup={setOpenLoginSignup}
+				setLoadLogin={setLoadLogin}
+			/>
+			<AllRoutes
+				setOpenLoginSignup={setOpenLoginSignup}
+				setLoadLogin={setLoadLogin}
+			/>
 			<Footer />
 		</>
 	);
