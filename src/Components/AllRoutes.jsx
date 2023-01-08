@@ -5,6 +5,7 @@ import NotFound from "../Pages/NotFound";
 import Restaurant from "../Pages/Restaurant";
 import Search from "../Pages/Search";
 import LandingPage from "./LandingPage/LandingPage";
+import ThankyouPage from "../Pages/ThankyouPage";
 
 const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 	return (
@@ -43,6 +44,10 @@ const AllRoutes = ({ setOpenLoginSignup, setLoadLogin }) => {
 				<Route
 					path='*'
 					element={<NotFound />}
+				/>
+				<Route
+					path='/thankyou'
+					element={<ThankyouPage />}
 				/>
 			</Routes>
 		</>
