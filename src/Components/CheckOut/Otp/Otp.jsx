@@ -20,6 +20,7 @@ export default function Otp({ setOpenLoginSignup, setLoadLogin }) {
 		[currentCart] = cart.filter((elem) => elem.username === curUser.username);
 	}
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		setLoading(true);
 
 		setTimeout(() => {

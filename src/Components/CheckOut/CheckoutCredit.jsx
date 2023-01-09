@@ -1,3 +1,4 @@
+import { useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,11 +9,23 @@ export default function CheckoutCredit() {
 	const [expiry, setExpiry] = useState("");
 	const [error, setError] = useState(false);
 	const navigate = useNavigate();
+	const toast = useToast();
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (firstName.length == 0 || cardNumber.length < 16) {
 			setError(true);
 		} else {
+			setTimeout(() => {
+				toast({
+					title: "OTP for your payment is 1234...",
+					status: "success",
+					duration: 2000,
+					isClosable: true,
+					position: "top",
+				});
+			}, 2000);
+
 			navigate("/otp");
 		}
 	};
@@ -71,7 +84,7 @@ export default function CheckoutCredit() {
 					className=' flex flex-col'
 					onSubmit={handleSubmit}>
 					<input
-						className='w-full h-12 border border-x-stone-600'
+						className='px-4 w-full h-12 border border-x-stone-600'
 						type='text'
 						placeholder='Card Number'
 						value={cardNumber}

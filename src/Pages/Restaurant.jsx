@@ -8,6 +8,7 @@ import styles from "../styles/Restaurant.module.css";
 import DishSearchComponent from "../Components/RestaurantList/DishSearchComponent";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import TopLoading from "../Components/TopLoading";
 
 const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 	const { id } = useParams();

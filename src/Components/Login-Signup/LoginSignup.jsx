@@ -52,12 +52,21 @@ function LoginSignup({ open, loadlogin }) {
 				isClosable: true,
 				position: "top",
 			});
+		} else if (loginState.phn.length !== 10) {
+			toast({
+				title: "Enter a valid Phone number",
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				position: "top",
+			});
 		} else {
 			dispatch(login({ ...loginState, phn: +loginState.phn }));
 		}
 	}
 
 	function handleSignup() {
+		console.log(signupState.phn.length);
 		if (
 			!signupState.name ||
 			!signupState.phn ||
@@ -71,7 +80,7 @@ function LoginSignup({ open, loadlogin }) {
 				isClosable: true,
 				position: "top",
 			});
-		} else if (!signupState.phn.length === 10) {
+		} else if (signupState.phn.length !== 10) {
 			toast({
 				title: "Enter a valid Phone number",
 				status: "error",
@@ -222,7 +231,8 @@ function LoginSignup({ open, loadlogin }) {
 										padding={"34px"}
 										borderRadius={"0px"}
 										w={"100%"}
-										type={"number"}
+										maxLength={10}
+										type={"text"}
 										value={loginState.phn || ""}
 										name='phn'
 										onChange={(e) =>
@@ -309,6 +319,7 @@ function LoginSignup({ open, loadlogin }) {
 										borderRadius={"0px"}
 										w={"100%"}
 										name='phn'
+										maxLength={10}
 										value={signupState.phn || ""}
 										onChange={(e) =>
 											setSignupState((p) => ({
@@ -316,7 +327,7 @@ function LoginSignup({ open, loadlogin }) {
 												[e.target.name]: e.target.value,
 											}))
 										}
-										type={"number"}
+										type={"text"}
 										mt={"40px"}
 									/>
 

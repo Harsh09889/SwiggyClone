@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Cart from "./Cart";
 import { logout } from "../Redux/Auth/AuthActions";
 import { useToast } from "@chakra-ui/react";
+import TopLoading from "./TopLoading";
 
 const apiKey = "b7ef12df4384db73cd258227099f7ce8";
 
@@ -40,8 +41,9 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 	}, []);
 
 	return (
-		<>
-			<div className='h-20 shadow-md flex justify-center sticky top-0 bg-white z-50'>
+		<div className='sticky top-0    bg-white z-50'>
+			<TopLoading />
+			<div className='h-20 shadow-md flex flex-col items-center'>
 				<div className='w-full h-full max-w-[1200px] px-4  flex items-center justify-between'>
 					<div className='flex h-full items-center'>
 						<img
@@ -167,7 +169,7 @@ function Navbar({ setOpenLoginSignup, setLoadLogin }) {
 					</ul>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
