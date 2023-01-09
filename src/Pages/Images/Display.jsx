@@ -26,11 +26,12 @@ function Display({ dish }) {
 
 	return !restaurant ? null : (
 		<div
-			onClick={handleNavigate}
 			key={dish.id}
 			className='h-56 m-5 bg-white rounded-[20px] p-8'>
 			{/* <Link to={`/restaurants/${dish.restaurant[0]}`}> */}
-			<div className='hidden md:block'>
+			<div
+				onClick={handleNavigate}
+				className='hidden md:block'>
 				<h1 className='text-lg leading-5 font-bold first-letter:capitalize'>
 					{restaurant.name}
 				</h1>
