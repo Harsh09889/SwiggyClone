@@ -1,12 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function index({ ischeckout }) {
 	let isAuth = useSelector((state) => state.auth.auth.isAuth);
 	let curUser = useSelector((state) => state.auth.currentUser);
 	const cart = useSelector((state) => state.cart);
+	const location = useLocation();
+	const isInCheckout = location.pathname.split("/")[1] === "checkout";
 
 	let currentCart = null;
 	if (isAuth) {
@@ -42,7 +44,7 @@ function index({ ischeckout }) {
 								0}
 						</p>
 					</h1>
-					{!ischeckout && (
+					{!isInCheckout && (
 						<Link
 							to={"/checkout"}
 							className='bg-green-500 text-white w-full block text-center py-3

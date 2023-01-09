@@ -8,3 +8,7 @@
 		font-family: Figtree;
 	}
 }
+
+html {
+	scroll-behavior: smooth;
+}
