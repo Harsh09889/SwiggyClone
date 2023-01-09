@@ -1,9 +1,5 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
-import { FaFacebookF } from "react-icons/Fa";
-import { BsPinterest } from "react-icons/Bs";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { IoLogoTwitter } from "react-icons/io";
 
 const Footer = () => {
 	return (
@@ -41,7 +37,7 @@ const Footer = () => {
 					<p>Corporate-Swiggy Discount Voucher Terms & Conditions</p>
 				</div>
 
-				<div>
+				<div className='flex flex-col gap-12'>
 					<a
 						href={
 							"https://apps.apple.com/in/app/id989540920?referrer=utm_source%3Dswiggy%26utm_medium%3Dhomepage"
@@ -133,20 +129,6 @@ const Footer = () => {
 				</div>
 				<div style={{ color: "white", fontSize: "20px", fontWeight: "700" }}>
 					© 2023 Swiggy
-				</div>
-				<div className={styles.icon}>
-					<a href='#'>
-						<FaFacebookF />
-					</a>
-					<a href='#'>
-						<BsPinterest />
-					</a>
-					<a href='#'>
-						<AiOutlineInstagram />
-					</a>
-					<a href='#'>
-						<IoLogoTwitter />
-					</a>
 				</div>
 			</div>
 		</div>
