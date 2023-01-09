@@ -38,7 +38,7 @@ const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 	}, [dishSearch]);
 
 	useEffect(() => {
-		if (dishSearch.length < 1) {
+		if (dishSearch.length < 1 && !loading) {
 			document.getElementById(`dishId${selectedMenu}`).scrollIntoView({
 				behavior: "smooth",
 				block: "end",
@@ -47,8 +47,13 @@ const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 		}
 	}, [selectedMenu]);
 
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
-		window.scrollTo(0, 0);
+		!loading && window.scrollTo(0, 0);
+		setTimeout(() => {
+			setLoading(false);
+		}, 2500);
 		const onlyDishes = [];
 		data.menu.forEach((menuItem) => {
 			onlyDishes.push(...menuItem.foodItems);
@@ -56,7 +61,15 @@ const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 		setOnlyDishesId(onlyDishes);
 	}, []);
 
-	return !data.id ? (
+	return loading ? (
+		<div className='h-screen w-screen grid place-items-center bg-[#fbfbfb]'>
+			<img
+				className=''
+				src='https://cdn.dribbble.com/users/58386/screenshots/11074623/media/c2c3b6f8a9d948c2cf901880e63e929f.gif'
+				alt='burgerLoading'
+			/>
+		</div>
+	) : !data.id ? (
 		<>
 			<Navbar
 				setOpenLoginSignup={setOpenLoginSignup}

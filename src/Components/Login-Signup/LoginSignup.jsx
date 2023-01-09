@@ -139,9 +139,16 @@ function LoginSignup({ open, loadlogin }) {
 					isClosable: true,
 					position: "top",
 				});
+
 				dispatch(
 					login({ phn: +signupState.phn, password: signupState.password })
 				);
+				setSignupState({
+					phn: 0,
+					username: "",
+					name: "",
+					password: "",
+				});
 			} else if (registerStatus >= 400) {
 				toast({
 					title: "Register Not Successful Please after some time!!",

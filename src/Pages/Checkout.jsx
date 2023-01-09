@@ -78,7 +78,7 @@ function Checkout({ setOpenLoginSignup, setLoadLogin }) {
 									You have a saved address in this location
 								</p>
 								<br />
-								<div className='h-52 flex  w-100%  p-5'>
+								<div className='h-52 flex  w-full  p-5'>
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										fill='none'
@@ -95,11 +95,8 @@ function Checkout({ setOpenLoginSignup, setLoadLogin }) {
 									&nbsp; &nbsp;
 									<div className='  w-[50%]'>
 										<h1 className='text-xl font-semibold'>Home</h1>
-										<p className='text-base font-medium p-5'>
-											Lorem ipsum dolor soluta animi sunt quidem nesciunt!
-											Dicta, vel labore? Unde.
-										</p>
-										<button className='bg-green-500 rounded-sm text-white text-sm h-7 p-1 ml-4'>
+										<p className='text-base font-medium py-5'>Nangloi, Delhi</p>
+										<button className='bg-green-500 rounded-sm text-white text-sm h-7 p-1 '>
 											DELIVER HERE
 										</button>
 									</div>
@@ -122,14 +119,16 @@ function Checkout({ setOpenLoginSignup, setLoadLogin }) {
 										/>
 									</svg>{" "}
 									&nbsp; &nbsp;
-									<div className='  w-[50%]'>
-										<h1 className='text-xl font-semibold '> Add New Address</h1>
-										<p className='text-base font-medium p-5'>
+									<div className=' w-[50%]'>
+										<h1 className=' text-xl font-semibold '>
 											{" "}
-											Lorem ipsum dolor soluta animi sunt quidem nesciunt!
-											Dicta, vel labore? Unde.
+											Add New Address
+										</h1>
+										<p className='py-5 text-base font-medium '>
+											{" "}
+											Click on Add new to add new Address
 										</p>
-										<button className='bg-green-500 rounded-sm text-white text-sm h-7 p-1 ml-4'>
+										<button className='bg-green-500 rounded-sm text-white text-sm h-7 p-1'>
 											ADD NEW
 										</button>
 									</div>

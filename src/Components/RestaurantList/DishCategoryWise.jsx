@@ -17,8 +17,9 @@ function DishCategoryWise({ category, foodItems, restaurantId, id, vegOnly }) {
 			const [currentUserCart] = cartItems.filter(
 				(elem) => elem.username === currentUser.username
 			);
-			console.log(currentUserCart);
-			setCurrentUserCartDishes(currentUserCart.cartItems);
+			if (currentUserCart) {
+				setCurrentUserCartDishes(currentUserCart.cartItems);
+			}
 		}
 	}, [cartItems]);
 
