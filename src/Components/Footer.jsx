@@ -4,7 +4,6 @@ import { FaFacebookF } from "react-icons/Fa";
 import { BsPinterest } from "react-icons/Bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { IoLogoTwitter } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
