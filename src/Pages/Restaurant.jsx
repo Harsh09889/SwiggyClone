@@ -92,7 +92,7 @@ const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 					<li>{data.name}</li>
 				</ul>
 				<div
-					className={`bg-[#171a29] h-60 flex items-center text-white relative`}>
+					className={`bg-[#171a29] md:h-60 flex items-center text-white relative`}>
 					<div className='h-10 w-[35rem]  flex gap-8  absolute -bottom-5 left-1/2 -translate-x-1/2'>
 						<div className='h-full flex items-center px-2 bg-white shadow-xl'>
 							<svg
@@ -131,13 +131,13 @@ const Restaurant = ({ setOpenLoginSignup, setLoadLogin }) => {
 						</div>
 					</div>
 					<div className='max-w-[1200px] mx-auto flex h-[70%] items-end justify-between w-full  '>
-						<div className='flex h-full gap-8 items-end'>
+						<div className='flex h-full py-12 md:py-0 flex-col md:flex-row gap-8 items-center md:items-end'>
 							<img
 								className='h-full w-60'
 								src={data.image}
 								alt='name'
 							/>
-							<div className=''>
+							<div className='w-[80%] md:w-full'>
 								<h1 className='text-4xl leading-10'>{data.name}</h1>
 								<h1 className='text-sm text-gray-300 mb-4 font-semibold'>
 									{data?.discription}
