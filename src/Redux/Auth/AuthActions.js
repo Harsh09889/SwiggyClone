@@ -96,7 +96,9 @@ export function register(registerDetails) {
 			} else {
 				dispatch({
 					type: REGISTER_FAILED,
-					payload: { error: "This Phone Number is Already Registered" },
+					payload: {
+						error: "This Phone Number or Username is Already Registered",
+					},
 				});
 			}
 		} else {
