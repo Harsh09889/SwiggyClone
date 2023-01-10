@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
-import CustomFont from "./customFont";
 import { useDispatch, useSelector } from "react-redux";
 import { login, register } from "../../Redux/Auth/AuthActions";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +36,15 @@ function LoginSignup({ open, loadlogin }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const auth = useSelector((state) => state.auth.auth.isAuth);
 	const error = useSelector((state) => state.auth.auth.error);
-	const registerStatus = useSelector((state) => state.auth.auth.registerStatus);
+	const registerLoading = useSelector(
+		(state) => state.auth.register.registerLoading
+	);
+	const registerStatus = useSelector(
+		(state) => state.auth.register.registerStatus
+	);
+	const registerError = useSelector(
+		(state) => state.auth.register.registerError
+	);
 	const firstRender = useRef(0);
 	const dispatch = useDispatch();
 	const toast = useToast();
@@ -129,7 +136,7 @@ function LoginSignup({ open, loadlogin }) {
 	}, [auth, error]);
 
 	useEffect(() => {
-		if (firstRender.current > 3) {
+		if (firstRender.current > 1) {
 			console.log("inside open", firstRender.current);
 			if (isOpen) onClose();
 			else onOpen();
@@ -137,39 +144,43 @@ function LoginSignup({ open, loadlogin }) {
 		firstRender.current++;
 	}, [open]);
 
-	const firstRenderRegister = useRef(0);
 	useEffect(() => {
-		if (firstRenderRegister.current > 1) {
-			if (registerStatus === 201) {
-				toast({
-					title: "Register successful!!",
-					status: "success",
-					duration: 2000,
-					isClosable: true,
-					position: "top",
-				});
+		if (
+			registerStatus === 201 &&
+			registerLoading === false &&
+			registerError === false
+		) {
+			toast({
+				title: "Register successful!!",
+				status: "success",
+				duration: 2000,
+				isClosable: true,
+				position: "top",
+			});
 
-				dispatch(
-					login({ phn: +signupState.phn, password: signupState.password })
-				);
-				setSignupState({
-					phn: 0,
-					username: "",
-					name: "",
-					password: "",
-				});
-			} else if (registerStatus >= 400) {
-				toast({
-					title: "Register Not Successful Please after some time!!",
-					status: "error",
-					duration: 2000,
-					isClosable: true,
-					position: "top",
-				});
-			}
+			dispatch(
+				login({ phn: +signupState.phn, password: signupState.password })
+			);
+			setSignupState({
+				phn: 0,
+				username: "",
+				name: "",
+				password: "",
+			});
+		} else if (
+			registerStatus !== 201 &&
+			registerLoading === false &&
+			registerError !== false
+		) {
+			toast({
+				title: registerError,
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				position: "top",
+			});
 		}
-		firstRenderRegister.current++;
-	}, [registerStatus]);
+	}, [registerLoading, registerError, registerStatus]);
 
 	//signup switch
 	const handlespanSignUp = () => {

@@ -5,6 +5,7 @@ export const LOGOUT = "LOGOUT";
 export const REGISTER = "REGISTER";
 export const REGISTER_FAILED = "REGISTER_FAILED";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_REQUEST = "REGISTER_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILED = "LOGIN_FAILED";
 
@@ -67,6 +68,8 @@ export function logout(payload) {
 
 export function register(registerDetails) {
 	return async function reduxThunkAction(dispatch, getState) {
+		dispatch({ type: REGISTER_REQUEST });
+
 		const { data } = await axios.get(`https://swiggy-api.glitch.me/users`);
 
 		if (data.length > 0) {
@@ -75,6 +78,7 @@ export function register(registerDetails) {
 					user.phn === registerDetails.phn ||
 					user.username === registerDetails.username
 			);
+
 			if (curUser.length === 0) {
 				const resp = await axios.post(
 					`https://swiggy-api.glitch.me/users`,
@@ -90,6 +94,7 @@ export function register(registerDetails) {
 					dispatch({
 						type: REGISTER_FAILED,
 						payload: {
+							registerStatus: resp.status,
 							error: "Could Not Register, Try again after some time.",
 						},
 					});
@@ -97,6 +102,7 @@ export function register(registerDetails) {
 				dispatch({
 					type: REGISTER_FAILED,
 					payload: {
+						registerStatus: 401,
 						error: "This Phone Number or Username is Already Registered",
 					},
 				});
@@ -115,7 +121,10 @@ export function register(registerDetails) {
 			} else
 				dispatch({
 					type: REGISTER_FAILED,
-					payload: { error: "Could Not Register, Try again after some time." },
+					payload: {
+						registerStatus: resp.status,
+						error: "Could Not Register, Try again after some time.",
+					},
 				});
 		}
 	};
