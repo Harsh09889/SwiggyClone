@@ -3,7 +3,7 @@ import {
 	LOGIN_FAILED,
 	LOGIN_SUCCESS,
 	LOGOUT,
-	REGISTER,
+	REGISTER_REQUEST,
 	REGISTER_FAILED,
 	REGISTER_SUCCESS,
 } from "./AuthActions";
@@ -12,7 +12,11 @@ const INITIAL_STATE = {
 	auth: {
 		isAuth: false,
 		error: false,
+	},
+	register: {
+		registerLoading: false,
 		registerStatus: 0,
+		registerError: false,
 	},
 	currentUser: null,
 };
@@ -45,17 +49,32 @@ export function AuthReducer(state = INITIAL_STATE, { type, payload }) {
 		case REGISTER_SUCCESS:
 			return {
 				...state,
-				auth: { ...state.auth, registerStatus: payload.registerStatus },
+				register: {
+					registerLoading: false,
+					registerStatus: payload.registerStatus,
+					registerError: false,
+				},
 			};
 
 		case REGISTER_FAILED:
 			return {
 				...state,
-				auth: {
-					isAuth: false,
-					error: payload.error,
+				register: {
+					registerLoading: false,
+					registerStatus: payload.registerStatus,
+					registerError: payload.error,
 				},
 				currentUser: { username: "", name: "" },
+			};
+
+		case REGISTER_REQUEST:
+			return {
+				...state,
+				register: {
+					registerLoading: true,
+					registerStatus: 0,
+					registerError: false,
+				},
 			};
 
 		default:
